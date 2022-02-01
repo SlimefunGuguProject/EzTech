@@ -1,4 +1,4 @@
-package me.ezcoins.slimefunaddon;
+package me.ezcoins.slimefunaddon.Materials;
 
 import java.util.Arrays;
 
@@ -7,24 +7,28 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import me.ezcoins.slimefunaddon.MyCoolAddon;
 
 
-
+import me.ezcoins.slimefunaddon.Machines.ZincFactory;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 
 public final class Materials {
-    public static final SlimefunItemStack TESTING_INGOT = new SlimefunItemStack(
-            "TEST_INGOT",
+
+    public static final SlimefunItemStack FACTORY_MOTOR = new SlimefunItemStack(
+            "FACTORY_MOTOR",
             Material.DIAMOND,
             "&bezaeaz",
             "&7eazeazez");
 
 
-
-                private static void registerEnhanced(SlimefunItemStack item, ItemStack[] recipe) {
+            private static void registerEnhanced(SlimefunItemStack item, ItemStack[] recipe) {
                     register(item, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
                 }
 
