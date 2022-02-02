@@ -4,7 +4,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.ezcoins</groupId>
-    <artifactId>MyCoolAddon</artifactId>
+    <artifactId>EzSFAddon</artifactId>
     <version>1.0.0</version>
 
     <properties>

@@ -1,4 +1,4 @@
-package me.ezcoins.slimefunaddon.Machines;
+package me.ezcoins.slimefunaddon.Machines.Factory;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
@@ -14,12 +14,12 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SilverFactory extends AContainer implements RecipeDisplayItem{
-    public static final int ENERGY_CONSUMPTION = 200;
+public class CaratFactory extends AContainer implements RecipeDisplayItem{
+    public static final int ENERGY_CONSUMPTION = 540;
     public static final int CAPACITY = ENERGY_CONSUMPTION * 3;
     private final ItemSetting<Boolean> useVanillaRatios = new ItemSetting<>(this, "use-vanilla-ratios", false);
 
-    public SilverFactory(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public CaratFactory(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
         addItemSetting(useVanillaRatios);
     }
@@ -27,11 +27,11 @@ public class SilverFactory extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(1, new ItemStack(Material.COBBLESTONE, 2), (new SlimefunItemStack(SlimefunItems.SILVER_INGOT,1)));
+            registerRecipe(3, new ItemStack(Material.GOLD_INGOT, 12), (new SlimefunItemStack(SlimefunItems.GOLD_24K,1)));
 
 
         } else {
-            registerRecipe(1, new ItemStack(Material.COBBLESTONE, 2), (new SlimefunItemStack(SlimefunItems.SILVER_INGOT,1)));
+            registerRecipe(3, new ItemStack(Material.GOLD_INGOT, 12), (new SlimefunItemStack(SlimefunItems.GOLD_24K,1)));
 
 
         }
@@ -59,7 +59,7 @@ public class SilverFactory extends AContainer implements RecipeDisplayItem{
 
     @Override
     public String getMachineIdentifier() {
-        return "SilverFactory";
+        return "CaratFactory";
     }
 
     @Override
@@ -73,6 +73,6 @@ public class SilverFactory extends AContainer implements RecipeDisplayItem{
 
     @Override
     public int getSpeed() {
-        return 1;
+        return 10;
     }
 }

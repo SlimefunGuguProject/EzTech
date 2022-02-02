@@ -1,14 +1,14 @@
 ## CHANGE this to the name of your plugin.
-name: mycooladdon
+name: EzSlimeFunAddon
 
 ## CHANGE this to your username.
-author: ezcoins
+author: EzCoins
 
 ## CHANGE this to a meaninful but short description of your plugin.
 description: A new slimefun addon
 
 ## CHANGE this to the path of the class that extends JavaPlugin.
-main: me.ezcoins.slimefunaddon.MyCoolAddon
+main: me.ezcoins.slimefunaddon.MainRecipes
 
 ## You can change this to link to your website or repository. You can also remove this line if you want to.
 website: https://github.com/Slimefun/Addon-Template

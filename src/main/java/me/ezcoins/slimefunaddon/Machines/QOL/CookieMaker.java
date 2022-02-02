@@ -1,4 +1,4 @@
-package me.ezcoins.slimefunaddon.Machines;
+package me.ezcoins.slimefunaddon.Machines.QOL;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
@@ -14,12 +14,13 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TinFactory extends AContainer implements RecipeDisplayItem{
-    public static final int ENERGY_CONSUMPTION = 200;
+public class CookieMaker extends AContainer implements RecipeDisplayItem{
+    public static final int ENERGY_CONSUMPTION = 16;
     public static final int CAPACITY = ENERGY_CONSUMPTION * 3;
+    public static final int SPEED = 1;
     private final ItemSetting<Boolean> useVanillaRatios = new ItemSetting<>(this, "use-vanilla-ratios", false);
 
-    public TinFactory(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public CookieMaker(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
         addItemSetting(useVanillaRatios);
     }
@@ -27,12 +28,13 @@ public class TinFactory extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(1, new ItemStack(Material.COBBLESTONE, 2), (new SlimefunItemStack(SlimefunItems.TIN_INGOT,1)));
+            registerRecipe(0, new ItemStack[] { new ItemStack(Material.WHEAT, 2), new ItemStack(Material.COCOA_BEANS) }, new ItemStack[] { new ItemStack(Material.COOKIE, 3) });
+            registerRecipe(0, new ItemStack[] { new ItemStack(Material.COCOA_BEANS, 1), new ItemStack(Material.WHEAT,2) }, new ItemStack[] { new ItemStack(Material.AIR) });
 
 
         } else {
-            registerRecipe(1, new ItemStack(Material.COBBLESTONE, 2), (new SlimefunItemStack(SlimefunItems.TIN_INGOT,1)));
-
+            registerRecipe(0, new ItemStack[] { new ItemStack(Material.WHEAT, 2), new ItemStack(Material.COCOA_BEANS) }, new ItemStack[] { new ItemStack(Material.COOKIE, 3) });
+            registerRecipe(0, new ItemStack[] { new ItemStack(Material.COCOA_BEANS, 1), new ItemStack(Material.WHEAT,2) }, new ItemStack[] { new ItemStack(Material.AIR) });
 
         }
 
@@ -54,12 +56,12 @@ public class TinFactory extends AContainer implements RecipeDisplayItem{
 
     @Override
     public ItemStack getProgressBar() {
-        return new ItemStack(Material.LAVA_BUCKET);
+        return new ItemStack(Material.COOKIE);
     }
 
     @Override
     public String getMachineIdentifier() {
-        return "TinFactory";
+        return "CookieMaker";
     }
 
     @Override
@@ -68,12 +70,11 @@ public class TinFactory extends AContainer implements RecipeDisplayItem{
     }
 
     @Override
-    public int getEnergyConsumption() {
-        return ENERGY_CONSUMPTION;
+    public int getEnergyConsumption() {return ENERGY_CONSUMPTION;
     }
 
     @Override
     public int getSpeed() {
-        return 1;
+        return SPEED;
     }
 }

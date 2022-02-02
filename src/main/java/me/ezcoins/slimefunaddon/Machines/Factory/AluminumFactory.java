@@ -1,4 +1,4 @@
-package me.ezcoins.slimefunaddon.Machines;
+package me.ezcoins.slimefunaddon.Machines.Factory;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
@@ -15,8 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AluminumFactory extends AContainer implements RecipeDisplayItem{
-    public static final int ENERGY_CONSUMPTION = 200;
+    public static final int ENERGY_CONSUMPTION = 475;
     public static final int CAPACITY = ENERGY_CONSUMPTION * 3;
+    public static final int SPEED = 1;
     private final ItemSetting<Boolean> useVanillaRatios = new ItemSetting<>(this, "use-vanilla-ratios", false);
 
     public AluminumFactory(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
@@ -27,11 +28,11 @@ public class AluminumFactory extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(1, new ItemStack(Material.COBBLESTONE, 2), (new SlimefunItemStack(SlimefunItems.ALUMINUM_INGOT,1)));
+            registerRecipe(4, new ItemStack(Material.COBBLESTONE, 16), (new SlimefunItemStack(SlimefunItems.ALUMINUM_INGOT,8)));
 
 
         } else {
-            registerRecipe(1, new ItemStack(Material.COBBLESTONE, 2), (new SlimefunItemStack(SlimefunItems.ALUMINUM_INGOT,1)));
+            registerRecipe(4, new ItemStack(Material.COBBLESTONE, 16), (new SlimefunItemStack(SlimefunItems.ALUMINUM_INGOT,8)));
 
 
         }
@@ -73,6 +74,6 @@ public class AluminumFactory extends AContainer implements RecipeDisplayItem{
 
     @Override
     public int getSpeed() {
-        return 10;
+        return SPEED;
     }
 }

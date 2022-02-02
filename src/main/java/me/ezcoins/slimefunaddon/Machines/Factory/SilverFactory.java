@@ -1,4 +1,4 @@
-package me.ezcoins.slimefunaddon.Machines;
+package me.ezcoins.slimefunaddon.Machines.Factory;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
@@ -14,12 +14,12 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MagnesiumFactory extends AContainer implements RecipeDisplayItem{
-    public static final int ENERGY_CONSUMPTION = 200;
+public class SilverFactory extends AContainer implements RecipeDisplayItem{
+    public static final int ENERGY_CONSUMPTION = 475;
     public static final int CAPACITY = ENERGY_CONSUMPTION * 3;
     private final ItemSetting<Boolean> useVanillaRatios = new ItemSetting<>(this, "use-vanilla-ratios", false);
 
-    public MagnesiumFactory(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public SilverFactory(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
         addItemSetting(useVanillaRatios);
     }
@@ -27,11 +27,11 @@ public class MagnesiumFactory extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(1, new ItemStack(Material.COBBLESTONE, 2), (new SlimefunItemStack(SlimefunItems.MAGNESIUM_INGOT,1)));
+            registerRecipe(4, new ItemStack(Material.COBBLESTONE, 16), (new SlimefunItemStack(SlimefunItems.SILVER_INGOT,8)));
 
 
         } else {
-            registerRecipe(1, new ItemStack(Material.COBBLESTONE, 2), (new SlimefunItemStack(SlimefunItems.MAGNESIUM_INGOT,1)));
+            registerRecipe(4, new ItemStack(Material.COBBLESTONE, 16), (new SlimefunItemStack(SlimefunItems.SILVER_INGOT,8)));
 
 
         }
@@ -59,7 +59,7 @@ public class MagnesiumFactory extends AContainer implements RecipeDisplayItem{
 
     @Override
     public String getMachineIdentifier() {
-        return "MagnesiumFactory";
+        return "SilverFactory";
     }
 
     @Override
