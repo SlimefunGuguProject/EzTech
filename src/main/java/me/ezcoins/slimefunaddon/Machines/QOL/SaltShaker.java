@@ -1,4 +1,4 @@
-package me.ezcoins.slimefunaddon.Machines.Factory;
+package me.ezcoins.slimefunaddon.Machines.QOL;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
@@ -14,12 +14,13 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CopperFactory extends AContainer implements RecipeDisplayItem{
-    public static final int ENERGY_CONSUMPTION = 475;
+public class SaltShaker extends AContainer implements RecipeDisplayItem{
+    public static final int ENERGY_CONSUMPTION = 32;
     public static final int CAPACITY = ENERGY_CONSUMPTION * 3;
+    public static final int SPEED = 1;
     private final ItemSetting<Boolean> useVanillaRatios = new ItemSetting<>(this, "use-vanilla-ratios", false);
 
-    public CopperFactory(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public SaltShaker(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
         addItemSetting(useVanillaRatios);
     }
@@ -27,11 +28,11 @@ public class CopperFactory extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(4, new ItemStack(Material.COBBLESTONE, 16), (new SlimefunItemStack(SlimefunItems.COPPER_INGOT,8)));
+            registerRecipe(1, new ItemStack(Material.SAND, 2), (new SlimefunItemStack(SlimefunItems.SALT,1)));
 
 
         } else {
-            registerRecipe(4, new ItemStack(Material.COBBLESTONE, 16), (new SlimefunItemStack(SlimefunItems.COPPER_INGOT,8)));
+            registerRecipe(1, new ItemStack(Material.SAND, 2), (new SlimefunItemStack(SlimefunItems.SALT,1)));
 
 
         }
@@ -54,12 +55,12 @@ public class CopperFactory extends AContainer implements RecipeDisplayItem{
 
     @Override
     public ItemStack getProgressBar() {
-        return new ItemStack(Material.LAVA_BUCKET);
+        return new ItemStack(Material.WATER_BUCKET);
     }
 
     @Override
     public String getMachineIdentifier() {
-        return "CopperFactory";
+        return "ElectricGrindingMill";
     }
 
     @Override
@@ -68,12 +69,11 @@ public class CopperFactory extends AContainer implements RecipeDisplayItem{
     }
 
     @Override
-    public int getEnergyConsumption() {
-        return ENERGY_CONSUMPTION;
+    public int getEnergyConsumption() {return ENERGY_CONSUMPTION;
     }
 
     @Override
     public int getSpeed() {
-        return 10;
+        return SPEED;
     }
 }

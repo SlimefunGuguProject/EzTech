@@ -1,7 +1,8 @@
-package me.ezcoins.slimefunaddon.Materials;
+package me.ezcoins.slimefunaddon.Recipes;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.ezcoins.slimefunaddon.Core.Groups;
 import me.ezcoins.slimefunaddon.MainRecipes;
@@ -18,15 +19,6 @@ public class Materials {
             "&cMachine Motor"
     );
 
-    public static final SlimefunItemStack ALLOY_MIXTUREH = new SlimefunItemStack("ALLOY_MIXTURE50",
-            Material.NETHERITE_INGOT,
-            "&6&lAlloy Mixture&r &7(50%)"
-    );
-
-    public static final SlimefunItemStack ALLOY_MIXTURE = new SlimefunItemStack("ALLOY_MIXTURE",
-            Material.NETHERITE_INGOT,
-            "&6&lAlloy Mixture"
-    );
 
 
 
@@ -39,15 +31,7 @@ public class Materials {
                         SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.SMALL_CAPACITOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD})
                 .register(MainRecipes.plugin);
 
-        new SlimefunItem(Groups.EzMaterials, ALLOY_MIXTUREH, RecipeType.SMELTERY,
-                new ItemStack[]{new ItemStack(Material.IRON_INGOT), new ItemStack(Material.GOLD_INGOT), SlimefunItems.ALUMINUM_INGOT,
-                        SlimefunItems.COPPER_INGOT, SlimefunItems.MAGNESIUM_INGOT, SlimefunItems.LEAD_INGOT})
-                .register(MainRecipes.plugin);
 
-        new SlimefunItem(Groups.EzMaterials, ALLOY_MIXTURE, RecipeType.SMELTERY,
-                new ItemStack[]{Materials.ALLOY_MIXTUREH, SlimefunItems.SILVER_INGOT, SlimefunItems.TIN_INGOT,
-                        SlimefunItems.ZINC_INGOT, SlimefunItems.CARBON, null})
-                .register(MainRecipes.plugin);
 
 
 

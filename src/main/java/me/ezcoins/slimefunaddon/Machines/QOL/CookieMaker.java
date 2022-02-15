@@ -28,12 +28,12 @@ public class CookieMaker extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(0, new ItemStack[] { new ItemStack(Material.WHEAT, 2), new ItemStack(Material.COCOA_BEANS) }, new ItemStack[] { new ItemStack(Material.COOKIE, 3) });
+            registerRecipe(0, new ItemStack[] { new ItemStack(Material.WHEAT, 2), new ItemStack(Material.COCOA_BEANS) }, new ItemStack[] { new ItemStack(Material.COOKIE, 8) });
             registerRecipe(0, new ItemStack[] { new ItemStack(Material.COCOA_BEANS, 1), new ItemStack(Material.WHEAT,2) }, new ItemStack[] { new ItemStack(Material.AIR) });
 
 
         } else {
-            registerRecipe(0, new ItemStack[] { new ItemStack(Material.WHEAT, 2), new ItemStack(Material.COCOA_BEANS) }, new ItemStack[] { new ItemStack(Material.COOKIE, 3) });
+            registerRecipe(0, new ItemStack[] { new ItemStack(Material.WHEAT, 2), new ItemStack(Material.COCOA_BEANS) }, new ItemStack[] { new ItemStack(Material.COOKIE, 8) });
             registerRecipe(0, new ItemStack[] { new ItemStack(Material.COCOA_BEANS, 1), new ItemStack(Material.WHEAT,2) }, new ItemStack[] { new ItemStack(Material.AIR) });
 
         }

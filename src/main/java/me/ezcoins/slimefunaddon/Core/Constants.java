@@ -19,4 +19,6 @@ public class Constants {
             SlimefunItems.COPPER_INGOT, SlimefunItems.GOLD_DUST, SlimefunItems.IRON_DUST,
             SlimefunItems.LEAD_INGOT, SlimefunItems.ALUMINUM_INGOT, SlimefunItems.ZINC_INGOT,
             SlimefunItems.TIN_INGOT, SlimefunItems.MAGNESIUM_INGOT, SlimefunItems.SILVER_INGOT));
+
+
 }
