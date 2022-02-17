@@ -13,13 +13,17 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import me.ezcoins.slimefunaddon.Core.Constants;
 
+import java.util.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class IngotFactory extends AContainer implements RecipeDisplayItem{
     public static final int ENERGY_CONSUMPTION = 200;
     public static final int CAPACITY = ENERGY_CONSUMPTION * 3;
     private final ItemSetting<Boolean> useVanillaRatios = new ItemSetting<>(this, "use-vanilla-ratios", false);
+
+
 
 
     private final ItemStack[] ingots = new ItemStack[] {

@@ -1,0 +1,105 @@
+package me.ezcoins.slimefunaddon.Core;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import lombok.Setter;
+
+import me.ezcoins.slimefunaddon.MainRecipes;
+import me.ezcoins.slimefunaddon.Recipes.MachinesRecipes;
+import me.ezcoins.slimefunaddon.Recipes.Materials;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+
+import io.github.mooy1.infinityexpansion.infinitylib.machines.AbstractMachineBlock;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
+
+
+public final class MaterialGenerator extends AbstractMachineBlock implements RecipeDisplayItem {
+
+    private static final int[] OUTPUT_SLOTS = { 13 };
+    private static final int STATUS_SLOT = 4;
+
+    @Setter
+    private int speed;
+    @Setter
+    private Material material;
+
+    public static MaterialGenerator materials;
+
+    public MaterialGenerator(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe) {
+        super(category, item, type, recipe);
+    }
+
+    @Override
+    protected void setup(BlockMenuPreset blockMenuPreset) {
+        blockMenuPreset.drawBackground(new int[] {
+                0, 1, 2, 3, 4, 5, 6, 7, 8,
+                9, 10, 11, 12, 14, 15, 16, 17
+        });
+    }
+
+    @Override
+    protected int getStatusSlot() {
+        return STATUS_SLOT;
+    }
+
+    @Override
+    protected int[] getInputSlots() {
+        return new int[0];
+    }
+
+    @Override
+    protected int[] getOutputSlots() {
+        return OUTPUT_SLOTS;
+    }
+
+    @Override
+    public void onNewInstance(BlockMenu menu, Block b) {
+
+    }
+
+    @Override
+    public List<ItemStack> getDisplayRecipes() {
+        List<ItemStack> items = new ArrayList<>();
+        items.add(null);
+        items.add(new ItemStack(this.material, this.speed));
+        return items;
+    }
+
+    @Override
+    public String getRecipeSectionLabel( Player p) {
+        return "&7Generates";
+    }
+
+    @Override
+    protected boolean process(Block b, BlockMenu inv) {
+        ItemStack output = new ItemStack(this.material, this.speed);
+
+        if (!inv.fits(output, OUTPUT_SLOTS)) {
+
+            if (inv.hasViewer()) {
+                inv.replaceExistingItem(STATUS_SLOT, NO_ROOM_ITEM);
+            }
+            return false;
+
+        }
+
+        inv.pushItem(output, OUTPUT_SLOTS);
+
+        if (inv.hasViewer()) {
+            inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.LIME_STAINED_GLASS_PANE, "&aGenerating..."));
+        }
+
+        return true;
+    }
+
+}

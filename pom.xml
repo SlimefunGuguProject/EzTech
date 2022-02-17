@@ -27,6 +27,12 @@
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
+
+        <repository>
+            <id>CodeMC</id>
+            <url>https://repo.codemc.org/repository/maven-public</url>
+        </repository>
+
     </repositories>
 
     <build>
@@ -43,6 +49,38 @@
                 </includes>
             </resource>
         </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <configuration>
+                    <relocations>
+                        <relocation>
+                            <pattern>org.bstats</pattern>
+                            <shadedPattern>me.profelements.dynatech</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>io.github.mooy1.infinitylib</pattern>
+                            <shadedPattern>me.profelements.dynatech.infinitylib</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>dev.j3fftw.extrautils</pattern>
+                            <shadedPattern>me.profelements.dynatech.extrautils</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <dependencies>
@@ -61,6 +99,20 @@
         </dependency>
 
         <dependency>
+            <groupId>io.github.mooy1</groupId>
+            <artifactId>InfinityExpansion</artifactId>
+            <version>c4e42cc</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.TheBusyBiscuit</groupId>
+            <artifactId>ExoticGarden</artifactId>
+            <version>7f9a5f63e3</version>
+        </dependency>
+
+
+        <dependency>
             <groupId>com.github.Slimefun</groupId>
             <artifactId>Slimefun4</artifactId>
             <version>RC-28</version>
@@ -72,5 +124,19 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <dependency>
+            <groupId>com.github.Slimefun-Addon-Community</groupId>
+            <artifactId>extrautils</artifactId>
+            <version>73e76ac</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+
     </dependencies>
 </project>

@@ -2,6 +2,7 @@ package me.ezcoins.slimefunaddon.Machines.QOL;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
@@ -9,7 +10,9 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import org.bukkit.Material;
+import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
+import io.github.thebusybiscuit.exoticgarden.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,4 +79,5 @@ public class SaltShaker extends AContainer implements RecipeDisplayItem{
     public int getSpeed() {
         return SPEED;
     }
+
 }

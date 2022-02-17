@@ -1,22 +1,16 @@
 package me.ezcoins.slimefunaddon.Recipes;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import me.ezcoins.slimefunaddon.Core.Groups;
 import me.ezcoins.slimefunaddon.Core.MachinesLore;
-import me.ezcoins.slimefunaddon.Machines.Factory.IngotFactory;
+import me.ezcoins.slimefunaddon.Core.MaterialGenerator;
 import me.ezcoins.slimefunaddon.Machines.Factory.PresCarbonPress;
-import me.ezcoins.slimefunaddon.Machines.QOL.Corrupter;
-import me.ezcoins.slimefunaddon.Machines.QOL.SaltShaker;
-import org.apache.http.cookie.Cookie;
+import me.ezcoins.slimefunaddon.Machines.QOL.*;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.ezcoins.slimefunaddon.MainRecipes;
-import me.ezcoins.slimefunaddon.Machines.QOL.CookieMaker;
-import me.ezcoins.slimefunaddon.Machines.QOL.Hydronator;
-
-import java.util.concurrent.ThreadLocalRandom;
+import me.ezcoins.slimefunaddon.Machines.Generators.CookieGenerator;
 
 public class MachinesRecipes {
 
@@ -67,14 +61,27 @@ public class MachinesRecipes {
             MachinesLore.energyBuffer(50)
     );
 
-    public static final SlimefunItemStack IngotFactory = new SlimefunItemStack("INGOTFACTORY",
-            Material.BLUE_ICE,
-            "&bHydronator",
-            "&7Turns concrete powder into its hardened form.",
+    public static final SlimefunItemStack CookieGenerator = new SlimefunItemStack("COOKIEGENERATOR",
+            "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjViOTFkYTMyNTJjOTE3ZGQ5OWY2MmFjYTQ5ZGJiZTZmMTMzNTljNDA3NTdkZDUxMzIzM2I4OTkxOGViNzZlNSJ9fX0=",
+            "&6Cookie Generator",
             "",
-            MachinesLore.ENERGY_CONSUMPTION(10),
-            MachinesLore.energyBuffer(50)
+            "&7Uses cookies as... Fuel?",
+            "",
+            MachinesLore.ENERGY_CONSUMPTION(75),
+            MachinesLore.energyBuffer(475)
     );
+
+    public static final SlimefunItemStack COBBLEGENS = new SlimefunItemStack(
+            "COBBLE_GEN",
+            Material.SMOOTH_STONE,
+            "&cAdvanced &8Cobble Generator",
+            "",
+            MachinesLore.speed(4),
+            MachinesLore.energyPerSecond(120)
+    );
+
+
+
 
     public static void setup(MainRecipes plugin) {
 
@@ -108,11 +115,23 @@ public class MachinesRecipes {
                         SlimefunItems.ELECTRIC_MOTOR, Materials.MACHINE_MOTOR, SlimefunItems.ELECTRIC_MOTOR})
                 .register(MainRecipes.plugin);
 
-        new IngotFactory(Groups.EzMachines, IngotFactory, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[]{SlimefunItems.ELECTRO_MAGNET, SlimefunItems.BLISTERING_INGOT, SlimefunItems.ELECTRO_MAGNET,
+        new CookieGenerator(Groups.EzGenerators, CookieGenerator, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{SlimefunItems.ELECTRO_MAGNET, SlimefunItems.BLISTERING_INGOT_2, SlimefunItems.ELECTRO_MAGNET,
                         SlimefunItems.REINFORCED_ALLOY_INGOT, new ItemStack(Material.DIAMOND_BLOCK), SlimefunItems.REINFORCED_ALLOY_INGOT,
                         SlimefunItems.ELECTRIC_MOTOR, Materials.MACHINE_MOTOR, SlimefunItems.ELECTRIC_MOTOR})
+                .setCapacity(475)
+                .setEnergyProduction(75)
                 .register(MainRecipes.plugin);
+
+        new MaterialGenerator(Groups.EzGenerators, COBBLEGENS, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[] {
+                Materials.MACHINE_MOTOR, null, null,
+                null, null})
+                .material(Material.COBBLESTONE)
+                .speed(4)
+                .energyPerTick(75)
+                .register(MainRecipes.plugin);
+
 
     }
 
