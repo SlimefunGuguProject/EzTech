@@ -59,15 +59,15 @@
                     <relocations>
                         <relocation>
                             <pattern>org.bstats</pattern>
-                            <shadedPattern>me.profelements.dynatech</shadedPattern>
+                            <shadedPattern>me.ezcoins.dynatech</shadedPattern>
                         </relocation>
-                        <relocation>
-                            <pattern>io.github.mooy1.infinitylib</pattern>
-                            <shadedPattern>me.profelements.dynatech.infinitylib</shadedPattern>
-                        </relocation>
+                            <relocation>
+                                <pattern>io.github.mooy1.infinitylib</pattern>
+                                <shadedPattern>me.ezcoins.slimefunaddon.infinitylib</shadedPattern>
+                            </relocation>
                         <relocation>
                             <pattern>dev.j3fftw.extrautils</pattern>
-                            <shadedPattern>me.profelements.dynatech.extrautils</shadedPattern>
+                            <shadedPattern>me.ezcoins.slimefunaddon.extrautils</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
@@ -96,6 +96,13 @@
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.mooy1</groupId>
+            <artifactId>InfinityLib</artifactId>
+            <version>master-7e03c792cc-1</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>

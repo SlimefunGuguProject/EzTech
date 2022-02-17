@@ -1,26 +1,36 @@
 package me.ezcoins.slimefunaddon.Recipes;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import java.util.EnumMap;
+import java.util.concurrent.ThreadLocalRandom;
+
+import javax.annotation.Nonnull;
+
+import lombok.experimental.UtilityClass;
+
+import me.ezcoins.slimefunaddon.Core.MaterialGenerator;
+import me.ezcoins.slimefunaddon.Machines.Factory.*;
+import me.ezcoins.slimefunaddon.Machines.Generators.*;
+import me.ezcoins.slimefunaddon.Machines.QOL.*;
 import me.ezcoins.slimefunaddon.Core.Groups;
 import me.ezcoins.slimefunaddon.Core.MachinesLore;
-import me.ezcoins.slimefunaddon.Core.MaterialGenerator;
-import me.ezcoins.slimefunaddon.Machines.Factory.PresCarbonPress;
-import me.ezcoins.slimefunaddon.Machines.QOL.*;
+import me.ezcoins.slimefunaddon.MainRecipes;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+
+import io.github.mooy1.infinityexpansion.infinitylib.machines.MachineBlock;
+import io.github.mooy1.infinitylib.machines.MachineLore;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import me.ezcoins.slimefunaddon.MainRecipes;
-import me.ezcoins.slimefunaddon.Machines.Generators.CookieGenerator;
 
+@UtilityClass
 public class MachinesRecipes {
-
 
 
     public static final SlimefunItemStack PresCarbonPress = new SlimefunItemStack("PRESCARBON_PRESS",
             "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjA5MTQyZjNhMGFiY2Y5YWZkYjkzYmNjZDdmNGQ3MzNjYzZlZTM0N2Y3NjBiNGE3Y2IzM2ZiZDljZjk5YWJiMCJ9fX0=",
             "&ePressurized Carbon Press",
             "&7Turns logs into Carbon",
-                  "",
+            "",
             MachinesLore.ENERGY_CONSUMPTION(200),
             MachinesLore.energyBuffer(900)
     );
@@ -80,7 +90,15 @@ public class MachinesRecipes {
             MachinesLore.energyPerSecond(120)
     );
 
-
+    public static final SlimefunItemStack INGOTEXTRACTOR = new SlimefunItemStack(
+            "INGOTEXTRACTOR",
+            Material.FURNACE,
+            "&8INGOT Extractor",
+            "&7Converts cobble into ingots",
+            "",
+            MachineLore.speed(1),
+            MachineLore.energyPerSecond(240)
+    );
 
 
     public static void setup(MainRecipes plugin) {
@@ -123,16 +141,44 @@ public class MachinesRecipes {
                 .setEnergyProduction(75)
                 .register(MainRecipes.plugin);
 
-        new MaterialGenerator(Groups.EzGenerators, COBBLEGENS, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[] {
-                Materials.MACHINE_MOTOR, null, null,
-                null, null})
-                .material(Material.COBBLESTONE)
-                .speed(4)
-                .energyPerTick(75)
-                .register(MainRecipes.plugin);
+        new MaterialGenerator(Groups.EzGenerators, COBBLEGENS, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                null
+        }).material(Material.COBBLESTONE).speed(1).energyPerTick(24).register(plugin);
+
+
+        RandomizedItemStack twoIngot = new RandomizedItemStack(
+                new SlimefunItemStack(SlimefunItems.COPPER_INGOT, 2),
+                new SlimefunItemStack(SlimefunItems.ZINC_INGOT, 2),
+                new SlimefunItemStack(SlimefunItems.TIN_INGOT, 2),
+                new SlimefunItemStack(SlimefunItems.ALUMINUM_INGOT, 2),
+                new SlimefunItemStack(SlimefunItems.LEAD_INGOT, 2),
+                new SlimefunItemStack(SlimefunItems.SILVER_INGOT, 2),
+                new ItemStack(Material.GOLD_INGOT, 2),
+                new ItemStack(Material.IRON_INGOT, 2),
+                new SlimefunItemStack(SlimefunItems.MAGNESIUM_INGOT, 2)
+        );
+        new MachineBlock(Groups.EzMachines, INGOTEXTRACTOR, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+                null
+
+        }).addRecipe(twoIngot, new ItemStack(Material.COBBLESTONE, 4)).ticksPerOutput(1).
+                energyPerTick(240).register(MainRecipes.plugin);
 
 
     }
 
+    private static final class RandomizedItemStack extends ItemStack {
+
+        private final ItemStack[] items;
+
+        public RandomizedItemStack(ItemStack... outputs) {
+            super(outputs[0]);
+            this.items = outputs;
+        }
+
+        @Nonnull
+        @Override
+        public ItemStack clone() {
+            return this.items[ThreadLocalRandom.current().nextInt(this.items.length)].clone();
+        }
+    }
 }

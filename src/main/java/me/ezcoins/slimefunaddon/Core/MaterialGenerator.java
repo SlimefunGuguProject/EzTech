@@ -3,6 +3,9 @@ package me.ezcoins.slimefunaddon.Core;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Nonnull;
+
+
 import lombok.Setter;
 
 import me.ezcoins.slimefunaddon.MainRecipes;
@@ -13,7 +16,7 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.mooy1.infinityexpansion.infinitylib.machines.AbstractMachineBlock;
+import io.github.mooy1.infinitylib.machines.AbstractMachineBlock;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
@@ -31,16 +34,18 @@ public final class MaterialGenerator extends AbstractMachineBlock implements Rec
     @Setter
     private int speed;
     @Setter
-    private Material material;
+    private static Material material;
 
-    public static MaterialGenerator materials;
+
+
+
 
     public MaterialGenerator(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe) {
         super(category, item, type, recipe);
     }
 
     @Override
-    protected void setup(BlockMenuPreset blockMenuPreset) {
+    protected void setup(@Nonnull BlockMenuPreset blockMenuPreset) {
         blockMenuPreset.drawBackground(new int[] {
                 0, 1, 2, 3, 4, 5, 6, 7, 8,
                 9, 10, 11, 12, 14, 15, 16, 17
@@ -63,10 +68,11 @@ public final class MaterialGenerator extends AbstractMachineBlock implements Rec
     }
 
     @Override
-    public void onNewInstance(BlockMenu menu, Block b) {
+    public void onNewInstance(@Nonnull BlockMenu menu, @Nonnull Block b) {
 
     }
 
+    @Nonnull
     @Override
     public List<ItemStack> getDisplayRecipes() {
         List<ItemStack> items = new ArrayList<>();
@@ -75,13 +81,14 @@ public final class MaterialGenerator extends AbstractMachineBlock implements Rec
         return items;
     }
 
+    @Nonnull
     @Override
-    public String getRecipeSectionLabel( Player p) {
+    public String getRecipeSectionLabel(@Nonnull Player p) {
         return "&7Generates";
     }
 
     @Override
-    protected boolean process(Block b, BlockMenu inv) {
+    protected boolean process(@Nonnull Block b, @Nonnull BlockMenu inv) {
         ItemStack output = new ItemStack(this.material, this.speed);
 
         if (!inv.fits(output, OUTPUT_SLOTS)) {
