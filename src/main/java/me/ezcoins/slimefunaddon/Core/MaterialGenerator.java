@@ -8,9 +8,6 @@ import javax.annotation.Nonnull;
 
 import lombok.Setter;
 
-import me.ezcoins.slimefunaddon.MainRecipes;
-import me.ezcoins.slimefunaddon.Recipes.MachinesRecipes;
-import me.ezcoins.slimefunaddon.Recipes.Materials;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -34,9 +31,7 @@ public final class MaterialGenerator extends AbstractMachineBlock implements Rec
     @Setter
     private int speed;
     @Setter
-    private static Material material;
-
-
+    private Material material;
 
 
 

@@ -1,22 +1,22 @@
 package me.ezcoins.slimefunaddon.Recipes;
-import java.util.EnumMap;
 import java.util.concurrent.ThreadLocalRandom;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
+import io.github.mooy1.infinitylib.machines.MachineBlock;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import lombok.experimental.UtilityClass;
-
 import me.ezcoins.slimefunaddon.Core.MaterialGenerator;
 import me.ezcoins.slimefunaddon.Machines.Factory.*;
 import me.ezcoins.slimefunaddon.Machines.Generators.*;
 import me.ezcoins.slimefunaddon.Machines.QOL.*;
 import me.ezcoins.slimefunaddon.Core.Groups;
 import me.ezcoins.slimefunaddon.Core.MachinesLore;
-import me.ezcoins.slimefunaddon.MainRecipes;
+import me.ezcoins.slimefunaddon.MainClass;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.mooy1.infinityexpansion.infinitylib.machines.MachineBlock;
 import io.github.mooy1.infinitylib.machines.MachineLore;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
@@ -93,45 +93,57 @@ public class MachinesRecipes {
     public static final SlimefunItemStack INGOTEXTRACTOR = new SlimefunItemStack(
             "INGOTEXTRACTOR",
             Material.FURNACE,
-            "&8INGOT Extractor",
-            "&7Converts cobble into ingots",
+            "&8Ingot Extractor",
+            "&7Converts cobblestone into ingots",
+            "",
+            MachineLore.speed(1),
+            MachineLore.energyPerSecond(240)
+    );
+
+    public static final SlimefunItemStack SauceDipper = new SlimefunItemStack(
+            "SAUCEDIPPER",
+            Material.CAULDRON,
+            "&6Sauce Dipper",
+            "&8Dips stuff in sauce",
             "",
             MachineLore.speed(1),
             MachineLore.energyPerSecond(240)
     );
 
 
-    public static void setup(MainRecipes plugin) {
+
+
+    public static void setup(MainClass plugin) {
 
         new PresCarbonPress(Groups.EzMachines, PresCarbonPress, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{SlimefunItems.ELECTRO_MAGNET, SlimefunItems.CARBONADO_EDGED_FURNACE, SlimefunItems.ELECTRO_MAGNET,
                         SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.CARBON_PRESS_3, SlimefunItems.REINFORCED_ALLOY_INGOT,
                         Materials.MACHINE_MOTOR, SlimefunItems.CARBONADO, Materials.MACHINE_MOTOR})
-                .register(MainRecipes.plugin);
+                .register(MainClass.plugin);
 
         new SaltShaker(Groups.EzMachines, SaltShaker, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{SlimefunItems.HEATING_COIL, new ItemStack(Material.CAULDRON), SlimefunItems.HEATING_COIL,
                         new ItemStack(Material.IRON_BLOCK), SlimefunItems.SALT, new ItemStack(Material.IRON_BLOCK),
                         new ItemStack(Material.IRON_BLOCK), Materials.MACHINE_MOTOR, new ItemStack(Material.IRON_BLOCK)})
-                .register(MainRecipes.plugin);
+                .register(MainClass.plugin);
 
         new CookieMaker(Groups.EzMachines, CookieMaker, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.CROP_GROWTH_ACCELERATOR_2, SlimefunItems.ELECTRIC_MOTOR,
                         SlimefunItems.REINFORCED_ALLOY_INGOT, new ItemStack(Material.HAY_BLOCK), SlimefunItems.REINFORCED_ALLOY_INGOT,
                         SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.SMALL_CAPACITOR, SlimefunItems.ELECTRIC_MOTOR})
-                .register(MainRecipes.plugin);
+                .register(MainClass.plugin);
 
         new Corrupter(Groups.EzMachines, Corrupter, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{SlimefunItems.ELECTRO_MAGNET, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.ELECTRO_MAGNET,
                         SlimefunItems.REINFORCED_ALLOY_INGOT, new ItemStack(Material.DIAMOND_BLOCK), SlimefunItems.REINFORCED_ALLOY_INGOT,
                         SlimefunItems.ELECTRIC_MOTOR, Materials.MACHINE_MOTOR, SlimefunItems.ELECTRIC_MOTOR})
-                .register(MainRecipes.plugin);
+                .register(MainClass.plugin);
 
         new Hydronator(Groups.EzMachines, Hydronator, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{SlimefunItems.ELECTRO_MAGNET, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.ELECTRO_MAGNET,
                         SlimefunItems.REINFORCED_ALLOY_INGOT, new ItemStack(Material.DIAMOND_BLOCK), SlimefunItems.REINFORCED_ALLOY_INGOT,
                         SlimefunItems.ELECTRIC_MOTOR, Materials.MACHINE_MOTOR, SlimefunItems.ELECTRIC_MOTOR})
-                .register(MainRecipes.plugin);
+                .register(MainClass.plugin);
 
         new CookieGenerator(Groups.EzGenerators, CookieGenerator, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{SlimefunItems.ELECTRO_MAGNET, SlimefunItems.BLISTERING_INGOT_2, SlimefunItems.ELECTRO_MAGNET,
@@ -139,11 +151,19 @@ public class MachinesRecipes {
                         SlimefunItems.ELECTRIC_MOTOR, Materials.MACHINE_MOTOR, SlimefunItems.ELECTRIC_MOTOR})
                 .setCapacity(475)
                 .setEnergyProduction(75)
-                .register(MainRecipes.plugin);
+                .register(MainClass.plugin);
 
-        new MaterialGenerator(Groups.EzGenerators, COBBLEGENS, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+        new MachineBlock(Groups.EzFood, SauceDipper, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 null
-        }).material(Material.COBBLESTONE).speed(1).energyPerTick(24).register(plugin);
+
+        })      .addRecipe(getItem("FRIESWKETCHUP"), getItem("KETCHUP"),getItem("FRIES"))
+                .addRecipe(getItem("FRIESWCHEESE"), getItem("CHEESE"),getItem("FRIES"))
+                .ticksPerOutput(1).
+                energyPerTick(240).register(MainClass.plugin);
+
+        new MaterialGenerator(Groups.EzMachines, COBBLEGENS, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                null
+        }).material(Material.COBBLESTONE).speed(1).energyPerTick(24).register(MainClass.plugin);
 
 
         RandomizedItemStack twoIngot = new RandomizedItemStack(
@@ -161,10 +181,18 @@ public class MachinesRecipes {
                 null
 
         }).addRecipe(twoIngot, new ItemStack(Material.COBBLESTONE, 4)).ticksPerOutput(1).
-                energyPerTick(240).register(MainRecipes.plugin);
+                energyPerTick(240).register(MainClass.plugin);
+
 
 
     }
+
+    @Nullable
+    private static ItemStack getItem(@Nonnull String id) {
+        SlimefunItem item = SlimefunItem.getById(id);
+        return item != null ? item.getItem() : null;
+    }
+
 
     private static final class RandomizedItemStack extends ItemStack {
 
