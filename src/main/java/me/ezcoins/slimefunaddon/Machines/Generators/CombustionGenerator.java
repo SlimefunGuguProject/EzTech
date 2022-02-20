@@ -11,15 +11,18 @@ import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AGenerator;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineFuel;
 
-public class CookieGenerator extends AGenerator {
+public class CombustionGenerator extends AGenerator {
 
-    public CookieGenerator(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public CombustionGenerator(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
     }
 
     @Override
     protected void registerDefaultFuelTypes() {
-        registerFuel(new MachineFuel(2, new ItemStack(Material.COOKIE)));
+        registerFuel(new MachineFuel(2, new ItemStack(Material.GUNPOWDER)));
+        registerFuel(new MachineFuel(5, new ItemStack(Material.FIREWORK_ROCKET)));
+        registerFuel(new MachineFuel(15, new ItemStack(Material.TNT)));
+        registerFuel(new MachineFuel(30, new ItemStack(Material.END_CRYSTAL)));
 
     }
 

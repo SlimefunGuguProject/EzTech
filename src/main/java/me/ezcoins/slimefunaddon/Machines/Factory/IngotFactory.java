@@ -72,7 +72,7 @@ public class IngotFactory extends AContainer implements RecipeDisplayItem{
 
     @Override
     public String getMachineIdentifier() {
-        return "PresCarbonPres";
+        return "IngotFactory";
     }
 
     @Override

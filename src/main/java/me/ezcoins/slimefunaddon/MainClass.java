@@ -2,10 +2,9 @@ package me.ezcoins.slimefunaddon;
 
 import io.github.mooy1.infinitylib.core.AbstractAddon;
 import me.ezcoins.slimefunaddon.Core.Groups;
-import me.ezcoins.slimefunaddon.Recipes.MachinesRecipes;
-import me.ezcoins.slimefunaddon.Recipes.Materials;
+import me.ezcoins.slimefunaddon.Recipes.RecipeSetup;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
-import org.bukkit.plugin.java.JavaPlugin;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import org.bukkit.plugin.java.JavaPluginLoader;
@@ -29,8 +28,23 @@ public final class MainClass extends AbstractAddon implements SlimefunAddon {
         super("TheRealEzCoins", "SlimeFunAddon", "master", "auto-update");
     }
 
+    private static boolean exoticGardenInstalled;
+
+    public static boolean isExoticGardenInstalled() {
+        return exoticGardenInstalled;
+    }
+
+
+
     @Override
     protected void enable() {
+
+        getLogger().info("----------------------------------------");
+        getLogger().info("          QOL-Addon ~ EzCoins           ");
+        getLogger().info("----------------------------------------");
+
+
+        exoticGardenInstalled = Bukkit.getServer().getPluginManager().isPluginEnabled("ExoticGarden");
         // Read something from your config.yml
         Config cfg = new Config(this);
 
@@ -39,8 +53,7 @@ public final class MainClass extends AbstractAddon implements SlimefunAddon {
 
             plugin = this;
 
-            Materials.setup(plugin);
-            MachinesRecipes.setup(plugin);
+            RecipeSetup.setup(plugin);
             Groups.setup(plugin);
         }
 

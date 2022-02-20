@@ -1,4 +1,4 @@
-package me.ezcoins.slimefunaddon.Machines.QOL;
+package me.ezcoins.slimefunaddon.Machines.Factory;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
@@ -14,13 +14,12 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SaltShaker extends AContainer implements RecipeDisplayItem{
-    public static final int ENERGY_CONSUMPTION = 32;
+public class UraniumExtractor extends AContainer implements RecipeDisplayItem{
+    public static final int ENERGY_CONSUMPTION = 240;
     public static final int CAPACITY = ENERGY_CONSUMPTION * 3;
-    public static final int SPEED = 1;
     private final ItemSetting<Boolean> useVanillaRatios = new ItemSetting<>(this, "use-vanilla-ratios", false);
 
-    public SaltShaker(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public UraniumExtractor(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
         addItemSetting(useVanillaRatios);
     }
@@ -28,11 +27,12 @@ public class SaltShaker extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(3, new ItemStack(Material.SAND, 2), (new SlimefunItemStack(SlimefunItems.SALT,1)));
+            registerRecipe(4, new ItemStack(Material.COBBLESTONE, 36), (new SlimefunItemStack(SlimefunItems.URANIUM,1)));
 
 
         } else {
-            registerRecipe(3, new ItemStack(Material.SAND, 2), (new SlimefunItemStack(SlimefunItems.SALT,1)));
+            registerRecipe(4, new ItemStack(Material.COBBLESTONE, 36), (new SlimefunItemStack(SlimefunItems.URANIUM,1)));
+
 
 
         }
@@ -55,12 +55,12 @@ public class SaltShaker extends AContainer implements RecipeDisplayItem{
 
     @Override
     public ItemStack getProgressBar() {
-        return new ItemStack(Material.GREEN_STAINED_GLASS_PANE);
+        return new ItemStack(Material.LAVA_BUCKET);
     }
 
     @Override
     public String getMachineIdentifier() {
-        return "SALTSHAKER";
+        return "UraniumExtractor";
     }
 
     @Override
@@ -74,7 +74,6 @@ public class SaltShaker extends AContainer implements RecipeDisplayItem{
 
     @Override
     public int getSpeed() {
-        return SPEED;
+        return 01;
     }
-
 }

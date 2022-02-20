@@ -5,7 +5,6 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import org.bukkit.Material;
@@ -28,8 +27,8 @@ public class Corrupter extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.COBBLESTONE,2) }, new ItemStack[] { new ItemStack(Material.NETHERRACK, 1) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.SAND,4) }, new ItemStack[] { new ItemStack(Material.SOUL_SAND, 1) });
+            registerRecipe(5, new ItemStack[] { new ItemStack(Material.COBBLESTONE,16) }, new ItemStack[] { new ItemStack(Material.NETHERRACK, 8) });
+            registerRecipe(3, new ItemStack[] { new ItemStack(Material.SAND,6) }, new ItemStack[] { new ItemStack(Material.SOUL_SAND, 1) });
             registerRecipe(2, new ItemStack[] { new ItemStack(Material.COPPER_BLOCK,1) }, new ItemStack[] { new ItemStack(Material.EXPOSED_COPPER, 1) });
             registerRecipe(2, new ItemStack[] { new ItemStack(Material.EXPOSED_COPPER,1) }, new ItemStack[] { new ItemStack(Material.WEATHERED_COPPER, 1) });
             registerRecipe(2, new ItemStack[] { new ItemStack(Material.WEATHERED_COPPER,1) }, new ItemStack[] { new ItemStack(Material.OXIDIZED_COPPER, 1) });
@@ -38,8 +37,8 @@ public class Corrupter extends AContainer implements RecipeDisplayItem{
 
 
         } else {
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.COBBLESTONE,2) }, new ItemStack[] { new ItemStack(Material.NETHERRACK, 1) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.SAND,4) }, new ItemStack[] { new ItemStack(Material.SOUL_SAND, 1) });
+            registerRecipe(2, new ItemStack[] { new ItemStack(Material.COBBLESTONE,16) }, new ItemStack[] { new ItemStack(Material.NETHERRACK, 8) });
+            registerRecipe(3, new ItemStack[] { new ItemStack(Material.SAND,6) }, new ItemStack[] { new ItemStack(Material.SOUL_SAND, 1) });
             registerRecipe(2, new ItemStack[] { new ItemStack(Material.COPPER_BLOCK,1) }, new ItemStack[] { new ItemStack(Material.EXPOSED_COPPER, 1) });
             registerRecipe(2, new ItemStack[] { new ItemStack(Material.EXPOSED_COPPER,1) }, new ItemStack[] { new ItemStack(Material.WEATHERED_COPPER, 1) });
             registerRecipe(2, new ItemStack[] { new ItemStack(Material.WEATHERED_COPPER,1) }, new ItemStack[] { new ItemStack(Material.OXIDIZED_COPPER, 1) });
