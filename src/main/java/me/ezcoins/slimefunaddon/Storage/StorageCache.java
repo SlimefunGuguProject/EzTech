@@ -40,7 +40,7 @@ import static me.ezcoins.slimefunaddon.Storage.StorageUnit.OUTPUT_SLOT;
 import static me.ezcoins.slimefunaddon.Storage.StorageUnit.STATUS_SLOT;
 
 
-final class StorageCache {
+public final class StorageCache {
 
     /* Menu strings */
     private static final String EMPTY_DISPLAY_NAME = ChatColor.WHITE + "Empty";
@@ -477,7 +477,7 @@ final class StorageCache {
         }
     }
 
-    private void depositAll(Player p) {
+    public void depositAll(Player p) {
         if (this.amount < this.storageUnit.max) {
             for (ItemStack item : p.getInventory().getStorageContents()) {
                 if (item != null && matches(item)) {
