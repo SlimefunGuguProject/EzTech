@@ -107,7 +107,7 @@ public class RecipeSetup {
         new MaterialGenerator(Groups.EzMachines, MaterialsSetup.COBBLEGENS, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 null,new ItemStack(Material.DIAMOND_PICKAXE),null,
                 new ItemStack(Material.LAVA_BUCKET),SlimefunItems.PROGRAMMABLE_ANDROID_MINER,new ItemStack(Material.WATER_BUCKET),
-                SlimefunItems.ELECTRIC_MOTOR,MaterialsSetup.MACHINECHASSIS,SlimefunItems.ELECTRIC_MOTOR
+                SlimefunItems.ELECTRIC_MOTOR, MaterialsSetup.MACHINE_MOTOR,SlimefunItems.ELECTRIC_MOTOR
         }).material(Material.COBBLESTONE).speed(1).energyPerTick(48).register(MainClass.plugin);
 
 
@@ -138,18 +138,15 @@ public class RecipeSetup {
 
         new UraniumExtractor(Groups.EzMachines, MaterialsSetup.URANIUMEXTRACTOR, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{SlimefunItems.ELECTRIC_ORE_GRINDER_2, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.ELECTRIC_ORE_GRINDER_2,
-                        SlimefunItems.BLISTERING_INGOT_3, MaterialsSetup.MACHINECHASSIS, SlimefunItems.BLISTERING_INGOT_3,
+                        SlimefunItems.ENHANCED_AUTO_CRAFTER, MaterialsSetup.MACHINECHASSIS, SlimefunItems.ENHANCED_AUTO_CRAFTER,
                         SlimefunItems.ELECTRIC_GOLD_PAN_3, MaterialsSetup.MACHINE_MOTOR, SlimefunItems.ELECTRIC_DUST_WASHER_3})
                 .register(MainClass.plugin);
 
-        new ElectricSmeltery(Groups.EzMachines, ELECTRIC_SMELTERY_3, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[] {MaterialsSetup.PLATINUM, SlimefunItems.POWER_CRYSTAL, MaterialsSetup.PLATINUM,
-                                 SlimefunItems.HEATING_COIL, SlimefunItems.ELECTRIC_SMELTERY_2, SlimefunItems.HEATING_COIL,
-                                 MaterialsSetup.PLATINUM, SlimefunItems.ELECTRIC_MOTOR, MaterialsSetup.PLATINUM})
-                .setCapacity(2048)
-                .setEnergyConsumption(60)
-                .setProcessingSpeed(8)
-                .register(plugin);
+        new ExtremeFreezer(Groups.EzMachines, MaterialsSetup.ExtremeFreezer, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{SlimefunItems.FREEZER_2, SlimefunItems.REACTOR_COOLANT_CELL, SlimefunItems.FREEZER_2,
+                        new ItemStack(Material.WATER_BUCKET), MaterialsSetup.MACHINECHASSIS, new ItemStack(Material.WATER_BUCKET),
+                        SlimefunItems.FREEZER_2, MaterialsSetup.MACHINE_MOTOR, SlimefunItems.FREEZER_2})
+                .register(MainClass.plugin);
 
 
 

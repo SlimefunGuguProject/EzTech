@@ -26,11 +26,13 @@ public class Groups {
             new CustomItemStack(Material.FURNACE, "&7EasyMachines"));
     public static final ItemGroup EzGenerators = new SubGroup("ezgenerators",
             new CustomItemStack(Material.DAYLIGHT_DETECTOR, "&7EasyGenerators"));
+    public static final ItemGroup EzStorage = new SubGroup("ezstorage",
+            new CustomItemStack(Material.DAYLIGHT_DETECTOR, "&7EasyStorage"));
     public static final ItemGroup Credits = new SubGroup("credits",
             new CustomItemStack(Material.PAPER, "&7Credits"));
     public static final ItemGroup MAIN_CATEGORY = new MultiGroup("main",
             new CustomItemStack(Material.END_CRYSTAL, "&9EasyExpansion"), 3,
-            EzMaterials, EzMachines, EzGenerators, Credits);
+            EzMaterials, EzMachines, EzGenerators, EzStorage, Credits);
 
     public static void setup(MainClass inst) {
         MAIN_CATEGORY.register(plugin);

@@ -1,15 +1,10 @@
 package me.ezcoins.slimefunaddon.Recipes;
 
 import io.github.mooy1.infinitylib.machines.MachineLore;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.ezcoins.slimefunaddon.Core.MachinesLore;
 import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 public class MaterialsSetup {
 
@@ -111,8 +106,8 @@ public class MaterialsSetup {
             "",
             "&7Corrupts blocks into a different state.",
             "",
-            MachinesLore.ENERGY_CONSUMPTION(160),
-            MachinesLore.energyBuffer(950)
+            MachineLore.energyPerSecond(60),
+            MachineLore.energyBuffer(360)
     );
 
     public static final SlimefunItemStack Hydronator = new SlimefunItemStack("HYDRONATOR",
@@ -165,7 +160,7 @@ public class MaterialsSetup {
             "&7Refines Gold into its purest form",
             "",
             MachineLore.speed(2),
-            MachineLore.energyPerSecond(300)
+            MachineLore.energyPerSecond(250)
     );
 
     public static final SlimefunItemStack URANIUMEXTRACTOR = new SlimefunItemStack(
@@ -207,14 +202,15 @@ public class MaterialsSetup {
             MachineLore.energyBuffer(384)
     );
 
-    public static final SlimefunItemStack ELECTRIC_SMELTERY_3 = new SlimefunItemStack("ELECTRIC_SMELTERY_3",
-            Material.FURNACE,
-            "&cElectric Smeltery &7- &eIII",
+    public static final SlimefunItemStack ExtremeFreezer = new SlimefunItemStack(
+            "EXTREMEFREEZER",
+            Material.LIGHT_BLUE_STAINED_GLASS,
+            "&bExtreme Freezer",
             "",
-            "&4Alloys-Only, doesn't smelt Dust into Ingots",
+            "&7Turns Water into Reactor Coolant",
             "",
-            MachineLore.speed(6),
-            MachineLore.energyPerSecond(60)
+            MachineLore.energyPerSecond(60),
+            MachineLore.energyBuffer(360)
     );
 
     public static final SlimefunItemStack BASIC_LUNAR_GENERATOR = new SlimefunItemStack(

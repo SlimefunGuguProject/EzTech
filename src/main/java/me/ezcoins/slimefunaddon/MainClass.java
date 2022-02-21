@@ -3,6 +3,7 @@ package me.ezcoins.slimefunaddon;
 import io.github.mooy1.infinitylib.core.AbstractAddon;
 import me.ezcoins.slimefunaddon.Core.Groups;
 import me.ezcoins.slimefunaddon.Recipes.RecipeSetup;
+import me.ezcoins.slimefunaddon.Storage.Storage;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
@@ -55,6 +56,7 @@ public final class MainClass extends AbstractAddon implements SlimefunAddon {
 
             RecipeSetup.setup(plugin);
             Groups.setup(plugin);
+            Storage.setup(plugin);
         }
 
 

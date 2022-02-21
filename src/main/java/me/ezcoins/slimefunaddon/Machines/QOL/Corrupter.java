@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Corrupter extends AContainer implements RecipeDisplayItem{
-    public static final int ENERGY_CONSUMPTION = 350;
+    public static final int ENERGY_CONSUMPTION = 60;
     public static final int CAPACITY = ENERGY_CONSUMPTION * 3;
     public static final int SPEED = 1;
     private final ItemSetting<Boolean> useVanillaRatios = new ItemSetting<>(this, "use-vanilla-ratios", false);

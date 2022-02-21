@@ -14,12 +14,12 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoldRefinery extends AContainer implements RecipeDisplayItem{
-    public static final int ENERGY_CONSUMPTION = 250;
+public class ExtremeFreezer extends AContainer implements RecipeDisplayItem{
+    public static final int ENERGY_CONSUMPTION = 60;
     public static final int CAPACITY = ENERGY_CONSUMPTION * 3;
     private final ItemSetting<Boolean> useVanillaRatios = new ItemSetting<>(this, "use-vanilla-ratios", false);
 
-    public GoldRefinery(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public ExtremeFreezer(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
         addItemSetting(useVanillaRatios);
     }
@@ -27,13 +27,11 @@ public class GoldRefinery extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(30, new ItemStack(Material.GOLD_INGOT, 12), (new SlimefunItemStack(SlimefunItems.GOLD_24K,1)));
-            registerRecipe(30, new SlimefunItemStack(SlimefunItems.GOLD_DUST, 12), (new SlimefunItemStack(SlimefunItems.GOLD_24K,1)));
+            registerRecipe(3, new ItemStack(Material.WATER_BUCKET), (new SlimefunItemStack(SlimefunItems.REACTOR_COOLANT_CELL,1)));
 
 
         } else {
-            registerRecipe(30, new ItemStack(Material.GOLD_INGOT, 12), (new SlimefunItemStack(SlimefunItems.GOLD_24K,1)));
-            registerRecipe(30, new SlimefunItemStack(SlimefunItems.GOLD_DUST, 12), (new SlimefunItemStack(SlimefunItems.GOLD_24K,1)));
+            registerRecipe(3, new ItemStack(Material.WATER_BUCKET), (new SlimefunItemStack(SlimefunItems.REACTOR_COOLANT_CELL,1)));
 
 
 
@@ -57,12 +55,12 @@ public class GoldRefinery extends AContainer implements RecipeDisplayItem{
 
     @Override
     public ItemStack getProgressBar() {
-        return new ItemStack(Material.LAVA_BUCKET);
+        return new ItemStack(Material.BLUE_ICE);
     }
 
     @Override
     public String getMachineIdentifier() {
-        return "GoldRefinery";
+        return "ExtremeFreezer";
     }
 
     @Override
