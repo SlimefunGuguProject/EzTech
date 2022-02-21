@@ -11,6 +11,7 @@ import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.handlers.BlockBreakHandler;
 import me.ezcoins.slimefunaddon.Core.Groups;
 import me.ezcoins.slimefunaddon.MainClass;
 import org.bukkit.ChatColor;
@@ -51,11 +52,13 @@ import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 @ParametersAreNonnullByDefault
 public final class StorageUnit extends MenuBlock {
 
+    /* Namespaced keys */
     static final NamespacedKey EMPTY_KEY = MainClass.createKey("empty"); // key for empty item
     static final NamespacedKey DISPLAY_KEY = MainClass.createKey("display"); // key for display item
     private static final NamespacedKey ITEM_KEY = MainClass.createKey("item"); // item key for item pdc
     private static final NamespacedKey AMOUNT_KEY = MainClass.createKey("stored"); // amount key for item pdc
 
+    /* Menu slots */
     static final int INPUT_SLOT = 10;
     static final int DISPLAY_SLOT = 13;
     static final int STATUS_SLOT = 4;
@@ -84,6 +87,7 @@ public final class StorageUnit extends MenuBlock {
         this.max = max;
 
         addItemHandler(new BlockTicker() {
+
             @Override
             public boolean isSynchronized() {
                 return true;
@@ -96,6 +100,22 @@ public final class StorageUnit extends MenuBlock {
                     cache.tick(b);
                 }
             }
+
+        }, new BlockBreakHandler(false, false) {
+
+            @Override
+            public void onPlayerBreak(BlockBreakEvent e, ItemStack item, List<ItemStack> drops) {
+                BlockMenu menu = BlockStorage.getInventory(e.getBlock());
+                StorageCache cache = StorageUnit.this.caches.remove(menu.getLocation());
+                if (cache != null && !cache.isEmpty()) {
+                    cache.destroy(e, drops);
+                }
+                else {
+                    drops.add(getItem().clone());
+                }
+                menu.dropItems(menu.getLocation(), INPUT_SLOT, OUTPUT_SLOT);
+            }
+
         });
     }
 
@@ -110,18 +130,6 @@ public final class StorageUnit extends MenuBlock {
     @Override
     public Collection<ItemStack> getDrops() {
         return Collections.emptyList();
-    }
-
-    @Override
-    protected void onBreak(BlockBreakEvent e, BlockMenu menu) {
-        StorageCache cache = this.caches.remove(menu.getLocation());
-        if (cache != null) {
-            cache.destroy(menu.getLocation(), e);
-        }
-        else {
-            e.getBlock().getWorld().dropItemNaturally(menu.getLocation(), getItem().clone());
-        }
-        menu.dropItems(menu.getLocation(), INPUT_SLOT, OUTPUT_SLOT);
     }
 
     @Override
@@ -142,7 +150,7 @@ public final class StorageUnit extends MenuBlock {
                 0, 1, 2, 9, 11, 18, 19, 20
         });
         blockMenuPreset.drawBackground(BACKGROUND_ITEM, new int[] {
-                3, 5, 12, 14, 21, 24
+                3, 5, 12, 14, 21, 23
         });
         blockMenuPreset.drawBackground(OUTPUT_BORDER, new int[] {
                 6, 7, 8, 15, 17, 24, 25, 26
@@ -177,6 +185,11 @@ public final class StorageUnit extends MenuBlock {
 
     public void reloadCache(Block b) {
         this.caches.get(b.getLocation()).reloadData();
+    }
+
+    @Nullable
+    public StorageCache getCache(Location location) {
+        return this.caches.get(location);
     }
 
     static void transferToStack(@Nonnull ItemStack source, @Nonnull ItemStack target) {

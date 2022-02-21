@@ -231,11 +231,7 @@ public final class StorageCache {
         this.signDisplay[1] = "";
     }
 
-    void destroy(Location l, BlockBreakEvent e) {
-        if (isEmpty()) {
-            e.getBlock().getWorld().dropItemNaturally(l, this.storageUnit.getItem().clone());
-            return;
-        }
+    void destroy(BlockBreakEvent e, List<ItemStack> drops) {
 
         // add output slot
         ItemStack output = this.menu.getItemInSlot(OUTPUT_SLOT);
@@ -250,19 +246,13 @@ public final class StorageCache {
         ItemStack drop = this.storageUnit.getItem().clone();
         drop.setItemMeta(StorageUnit.saveToStack(drop.getItemMeta(), this.menu.getItemInSlot(DISPLAY_SLOT), this.displayName, this.amount));
         e.getPlayer().sendMessage(ChatColor.GREEN + "Stored items transferred to dropped item");
-        e.getBlock().getWorld().dropItemNaturally(l, drop);
+        drops.add(drop);
     }
 
     void reloadData() {
         Config config = BlockStorage.getLocationInfo(this.menu.getLocation());
         String amt = config.getString(STORED_AMOUNT);
-        if (amt == null) {
-            this.amount = 0;
-            Scheduler.run(() -> BlockStorage.addBlockInfo(this.menu.getLocation(), STORED_AMOUNT, "0"));
-        }
-        else {
-            this.amount = Integer.parseInt(amt);
-        }
+        this.amount = amt == null ? 0 : Integer.parseInt(amt);
         this.voidExcess = "true".equals(config.getString(VOID_EXCESS));
     }
 
@@ -355,7 +345,7 @@ public final class StorageCache {
             updateStatus();
         }
 
-        // sings
+        // signs
         if (MainClass.slimefunTickCount() % 20 == 0) {
             Block check = block.getRelative(0, 1, 0);
             if (SlimefunTag.SIGNS.isTagged(check.getType())
@@ -477,21 +467,34 @@ public final class StorageCache {
         }
     }
 
-    public void depositAll(Player p) {
+    private void depositAll(Player p) {
+        depositAll(p.getInventory().getStorageContents());
+    }
+
+    public void depositAll(ItemStack[] itemStacks) {
+        depositAll(itemStacks, false);
+    }
+
+    public void depositAll(ItemStack[] itemStacks, boolean observeVoiding) {
         if (this.amount < this.storageUnit.max) {
-            for (ItemStack item : p.getInventory().getStorageContents()) {
+            for (ItemStack item : itemStacks) {
                 if (item != null && matches(item)) {
                     if (item.getAmount() + this.amount >= this.storageUnit.max) {
                         // last item
                         item.setAmount(item.getAmount() - (this.storageUnit.max - this.amount));
                         this.amount = this.storageUnit.max;
-                        break;
                     }
                     else {
                         this.amount += item.getAmount();
                         item.setAmount(0);
                     }
-                    //
+                }
+            }
+        }
+        if (observeVoiding && this.voidExcess) {
+            for (ItemStack item : itemStacks) {
+                if (item != null && matches(item)) {
+                    item.setAmount(0);
                 }
             }
         }
