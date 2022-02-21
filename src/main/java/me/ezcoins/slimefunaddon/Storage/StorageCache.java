@@ -40,12 +40,7 @@ import static me.ezcoins.slimefunaddon.Storage.StorageUnit.OUTPUT_SLOT;
 import static me.ezcoins.slimefunaddon.Storage.StorageUnit.STATUS_SLOT;
 
 
-/**
- * Represents a single storage unit with cached data
- *
- * @author Mooy1
- */
-final class StorageCache {
+public final class StorageCache {
 
     /* Menu strings */
     private static final String EMPTY_DISPLAY_NAME = ChatColor.WHITE + "Empty";
