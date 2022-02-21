@@ -491,6 +491,7 @@ public final class StorageCache {
                         this.amount += item.getAmount();
                         item.setAmount(0);
                     }
+                    //
                 }
             }
         }
