@@ -477,7 +477,7 @@ public final class StorageCache {
         }
     }
 
-    private void depositAll(Player p) {
+    public void depositAll(Player p) {
         if (this.amount < this.storageUnit.max) {
             for (ItemStack item : p.getInventory().getStorageContents()) {
                 if (item != null && matches(item)) {
