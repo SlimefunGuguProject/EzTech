@@ -2,8 +2,11 @@ package me.ezcoins.slimefunaddon;
 
 import io.github.mooy1.infinitylib.core.AbstractAddon;
 import me.ezcoins.slimefunaddon.Core.Groups;
-import me.ezcoins.slimefunaddon.Recipes.RecipeSetup;
-import me.ezcoins.slimefunaddon.Storage.Storage;
+import me.ezcoins.slimefunaddon.Credits.Credits;
+import me.ezcoins.slimefunaddon.Machines.MobChamber.MobData;
+import me.ezcoins.slimefunaddon.Recipes.Generators.GeneratorRecipes;
+import me.ezcoins.slimefunaddon.Recipes.Machines.MachineRecipes;
+import me.ezcoins.slimefunaddon.Recipes.Materials.MaterialRecipes;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
@@ -12,20 +15,20 @@ import org.bukkit.plugin.java.JavaPluginLoader;
 
 import java.io.File;
 
-public final class MainClass extends AbstractAddon implements SlimefunAddon {
+public final class EasySlimefunAddon extends AbstractAddon implements SlimefunAddon {
 
-    public static MainClass plugin;
+    public static EasySlimefunAddon plugin;
 
-    public MainClass(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file) {
+    public EasySlimefunAddon(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file) {
         super(loader, description, dataFolder, file,
                 "TheRealEzCoins", "SlimeFunAddon", "master", "auto-update");
     }
 
-    public static MainClass getInstance() {
+    public static EasySlimefunAddon getInstance() {
         return plugin;
     }
 
-    public MainClass() {
+    public EasySlimefunAddon() {
         super("TheRealEzCoins", "SlimeFunAddon", "master", "auto-update");
     }
 
@@ -54,9 +57,12 @@ public final class MainClass extends AbstractAddon implements SlimefunAddon {
 
             plugin = this;
 
-            RecipeSetup.setup(plugin);
+            MachineRecipes.setup(plugin);
+            MaterialRecipes.setup(plugin);
+            GeneratorRecipes.setup(plugin);
+            MobData.setup(plugin);
+            Credits.setup(plugin);
             Groups.setup(plugin);
-            Storage.setup(plugin);
         }
 
 

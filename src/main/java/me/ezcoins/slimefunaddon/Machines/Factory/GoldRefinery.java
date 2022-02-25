@@ -29,11 +29,13 @@ public class GoldRefinery extends AContainer implements RecipeDisplayItem{
         if (useVanillaRatios.getValue()) {
             registerRecipe(30, new ItemStack(Material.GOLD_INGOT, 12), (new SlimefunItemStack(SlimefunItems.GOLD_24K,1)));
             registerRecipe(30, new SlimefunItemStack(SlimefunItems.GOLD_DUST, 12), (new SlimefunItemStack(SlimefunItems.GOLD_24K,1)));
+            registerRecipe(30, new SlimefunItemStack(SlimefunItems.GOLD_4K, 12), (new SlimefunItemStack(SlimefunItems.GOLD_24K, 1)));
 
 
         } else {
             registerRecipe(30, new ItemStack(Material.GOLD_INGOT, 12), (new SlimefunItemStack(SlimefunItems.GOLD_24K,1)));
             registerRecipe(30, new SlimefunItemStack(SlimefunItems.GOLD_DUST, 12), (new SlimefunItemStack(SlimefunItems.GOLD_24K,1)));
+            registerRecipe(30, new SlimefunItemStack(SlimefunItems.GOLD_4K, 12), (new SlimefunItemStack(SlimefunItems.GOLD_24K, 1)));
 
 
 

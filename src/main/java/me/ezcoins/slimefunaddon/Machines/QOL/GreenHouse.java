@@ -7,7 +7,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import me.ezcoins.slimefunaddon.Core.GreenhouseBlock;
-import me.ezcoins.slimefunaddon.MainClass;
+import me.ezcoins.slimefunaddon.EasySlimefunAddon;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import org.bukkit.Material;
@@ -44,11 +44,30 @@ public class GreenHouse extends GreenhouseBlock implements RecipeDisplayItem {
         registerRecipe(20, new ItemStack[] { new ItemStack(Material.ACACIA_SAPLING)}, new ItemStack[] { new ItemStack(Material.ACACIA_LEAVES, 8), new ItemStack(Material.ACACIA_LOG, 6)});
         registerRecipe(20, new ItemStack[] { new ItemStack(Material.CRIMSON_FUNGUS)}, new ItemStack[] { new ItemStack(Material.WEEPING_VINES, 2), new ItemStack(Material.CRIMSON_STEM, 6)});
         registerRecipe(20, new ItemStack[] { new ItemStack(Material.WARPED_FUNGUS)}, new ItemStack[] { new ItemStack(Material.SHROOMLIGHT, 2), new ItemStack(Material.WARPED_STEM, 6)});
+
+
+        registerRecipe(10, new ItemStack(Material.DANDELION), new ItemStack(Material.DANDELION, 3));
+        registerRecipe(10, new ItemStack(Material.POPPY), new ItemStack(Material.POPPY, 3));
+        registerRecipe(10, new ItemStack(Material.BLUE_ORCHID), new ItemStack(Material.BLUE_ORCHID, 3));
+        registerRecipe(10, new ItemStack(Material.ALLIUM), new ItemStack(Material.ALLIUM, 3));
+        registerRecipe(10, new ItemStack(Material.AZURE_BLUET), new ItemStack(Material.AZURE_BLUET, 3));
+        registerRecipe(10, new ItemStack(Material.RED_TULIP), new ItemStack(Material.RED_TULIP, 3));
+        registerRecipe(10, new ItemStack(Material.ORANGE_TULIP), new ItemStack(Material.ORANGE_TULIP, 3));
+        registerRecipe(10, new ItemStack(Material.WHITE_TULIP), new ItemStack(Material.WHITE_TULIP, 3));
+        registerRecipe(10, new ItemStack(Material.PINK_TULIP), new ItemStack(Material.PINK_TULIP, 3));
+        registerRecipe(10, new ItemStack(Material.OXEYE_DAISY), new ItemStack(Material.OXEYE_DAISY, 3));
+        registerRecipe(10, new ItemStack(Material.CORNFLOWER), new ItemStack(Material.CORNFLOWER, 3));
+        registerRecipe(10, new ItemStack(Material.LILY_OF_THE_VALLEY), new ItemStack(Material.LILY_OF_THE_VALLEY, 3));
+        registerRecipe(10, new ItemStack(Material.WITHER_ROSE), new ItemStack(Material.WITHER_ROSE, 2));
+        registerRecipe(10, new ItemStack(Material.SUNFLOWER), new ItemStack(Material.SUNFLOWER, 2));
+        registerRecipe(10, new ItemStack(Material.LILAC), new ItemStack(Material.LILAC, 2));
+        registerRecipe(10, new ItemStack(Material.ROSE_BUSH), new ItemStack(Material.ROSE_BUSH, 2));
+        registerRecipe(10, new ItemStack(Material.PEONY), new ItemStack(Material.PEONY, 2));
     }
 
     @Override
     public MachineRecipe findNextRecipe(BlockMenu inv) {
-        if (MainClass.isExoticGardenInstalled() && exoticGardenIntegration.getValue()) {
+        if (EasySlimefunAddon.isExoticGardenInstalled() && exoticGardenIntegration.getValue()) {
             for (int inputSlot : getInputSlots()) {
                 ItemStack item = inv.getItemInSlot(inputSlot);
                 if (item != null && SlimefunItem.getByItem(item) != null) {

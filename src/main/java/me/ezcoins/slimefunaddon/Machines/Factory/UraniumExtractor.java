@@ -27,11 +27,11 @@ public class UraniumExtractor extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(4, new ItemStack(Material.COBBLESTONE, 36), (new SlimefunItemStack(SlimefunItems.URANIUM,1)));
+            registerRecipe(20, new ItemStack(Material.COBBLESTONE, 64), (new SlimefunItemStack(SlimefunItems.URANIUM,1)));
 
 
         } else {
-            registerRecipe(4, new ItemStack(Material.COBBLESTONE, 36), (new SlimefunItemStack(SlimefunItems.URANIUM,1)));
+            registerRecipe(20, new ItemStack(Material.COBBLESTONE, 64), (new SlimefunItemStack(SlimefunItems.URANIUM,1)));
 
 
 

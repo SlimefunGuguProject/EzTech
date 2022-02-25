@@ -8,7 +8,7 @@ author: EzCoins
 description: A new slimefun addon
 
 ## CHANGE this to the path of the class that extends JavaPlugin.
-main: me.ezcoins.slimefunaddon.MainClass
+main: me.ezcoins.slimefunaddon.EasySlimefunAddon
 
 ## You can change this to link to your website or repository. You can also remove this line if you want to.
 website: https://github.com/Slimefun/Addon-Template
@@ -22,4 +22,4 @@ api-version: 1.14
 
 ## This is required and marks Slimefun as a plugin dependency.
 depend: [Slimefun]
-softdepend: [ExoticGarden]
+softdepend: [ExoticGarden, SoulJars]

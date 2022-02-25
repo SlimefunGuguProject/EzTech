@@ -130,6 +130,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.github.TheBusyBiscuit</groupId>
+            <artifactId>SoulJars</artifactId>
+            <version>b8358a1f3d</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.github.Slimefun-Addon-Community</groupId>
             <artifactId>extrautils</artifactId>
             <version>73e76ac</version>

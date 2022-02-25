@@ -2,6 +2,7 @@ package me.ezcoins.slimefunaddon.Machines.QOL;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
@@ -11,10 +12,13 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecip
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CookieMaker extends AContainer implements RecipeDisplayItem{
+
     public static final int ENERGY_CONSUMPTION = 16;
     public static final int CAPACITY = ENERGY_CONSUMPTION * 3;
     public static final int SPEED = 1;
@@ -28,13 +32,12 @@ public class CookieMaker extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(0, new ItemStack[] { new ItemStack(Material.WHEAT, 2), new ItemStack(Material.COCOA_BEANS) }, new ItemStack[] { new ItemStack(Material.COOKIE, 8) });
-            registerRecipe(0, new ItemStack[] { new ItemStack(Material.COCOA_BEANS, 1), new ItemStack(Material.WHEAT,2) }, new ItemStack[] { new ItemStack(Material.AIR) });
-
+            registerRecipe(3, new ItemStack[] { new ItemStack(Material.WHEAT, 2), new ItemStack(Material.COCOA_BEANS) }, new ItemStack[] { new ItemStack(Material.COOKIE, 8) });
+            registerRecipe(3, new ItemStack[] { new ItemStack(Material.COCOA_BEANS, 1), new ItemStack(Material.WHEAT,2) }, new ItemStack[] { new ItemStack(Material.AIR) });
 
         } else {
-            registerRecipe(0, new ItemStack[] { new ItemStack(Material.WHEAT, 2), new ItemStack(Material.COCOA_BEANS) }, new ItemStack[] { new ItemStack(Material.COOKIE, 8) });
-            registerRecipe(0, new ItemStack[] { new ItemStack(Material.COCOA_BEANS, 1), new ItemStack(Material.WHEAT,2) }, new ItemStack[] { new ItemStack(Material.AIR) });
+            registerRecipe(3, new ItemStack[] { new ItemStack(Material.WHEAT, 2), new ItemStack(Material.COCOA_BEANS) }, new ItemStack[] { new ItemStack(Material.COOKIE, 8) });
+            registerRecipe(3, new ItemStack[] { new ItemStack(Material.COCOA_BEANS, 1), new ItemStack(Material.WHEAT,2) }, new ItemStack[] { new ItemStack(Material.AIR) });
 
         }
 
@@ -76,5 +79,12 @@ public class CookieMaker extends AContainer implements RecipeDisplayItem{
     @Override
     public int getSpeed() {
         return SPEED;
+    }
+
+    @Nullable
+    private static ItemStack getItem(@Nonnull String id) {
+        SlimefunItem item = SlimefunItem.getById(id);
+        return item != null ? item.getItem() : null;
+
     }
 }

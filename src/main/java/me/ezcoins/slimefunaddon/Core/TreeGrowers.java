@@ -7,11 +7,9 @@ import java.util.Map;
 
 import javax.annotation.Nonnull;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import lombok.Setter;
 
-import me.ezcoins.slimefunaddon.MainClass;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
+import me.ezcoins.slimefunaddon.EasySlimefunAddon;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
@@ -54,7 +52,7 @@ public final class TreeGrowers extends AbstractMachineBlock implements RecipeDis
             if (menu.hasViewer()) {
                 menu.replaceExistingItem(STATUS_SLOT, GROWING);
             }
-            if (MainClass.slimefunTickCount() % this.ticksPerOutput == 0) {
+            if (EasySlimefunAddon.slimefunTickCount() % this.ticksPerOutput == 0) {
                 ItemStack[] output = this.recipes.get(input.getType());
                 if (output != null) {
                     for (ItemStack item : output) {
