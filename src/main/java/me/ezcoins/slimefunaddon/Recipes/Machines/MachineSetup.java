@@ -80,7 +80,7 @@ public class MachineSetup {
             Material.RAW_GOLD_BLOCK,
             "&6Gold Refinery",
             "",
-            "&7Refines Gold into its purest form",
+            "&7Refines gold into its purest form",
             "",
             MachineLore.speed(2),
             MachineLore.energyPerSecond(250)
@@ -91,8 +91,9 @@ public class MachineSetup {
             Material.GREEN_CONCRETE,
             "&aUranium Extractor",
             "",
-            "&7Refines cobblestone into its &cRADIOACTIVE &7form",
+            "&7Refines cobblestone into &curanium",
             "",
+            MachineLore.speed(4),
             MachineLore.energyPerSecond(240)
     );
 
@@ -142,6 +143,7 @@ public class MachineSetup {
             "&6Decompressor",
             "",
             "&7De-compresses items",
+            "",
             MachineLore.energyPerSecond(12),
             MachineLore.energyBuffer(36)
     );

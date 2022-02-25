@@ -1,2 +1,5 @@
 options:
   auto-update: true
+
+  mob-simulation-options:
+    ticks-per-output: 60

@@ -60,7 +60,7 @@ public class Decompressor extends AContainer implements RecipeDisplayItem{
             registerRecipe(2, new ItemStack[] { new ItemStack(Material.GLASS,6) }, new ItemStack[] { new ItemStack(Material.GLASS_PANE, 16) });
             registerRecipe(2, new SlimefunItemStack(SlimefunItems.REINFORCED_PLATE, 1), (new SlimefunItemStack(SlimefunItems.REINFORCED_ALLOY_INGOT, 8)));
             registerRecipe(2, new SlimefunItemStack(MaterialsSetup.BISMUTHPLATES, 1), (new SlimefunItemStack(MaterialsSetup.BISMUTH, 8)));
-
+            registerRecipe(2, new SlimefunItemStack(SlimefunItems.STEEL_PLATE, 1), (new SlimefunItemStack(SlimefunItems.STEEL_INGOT, 8)));
         }
 
     }
