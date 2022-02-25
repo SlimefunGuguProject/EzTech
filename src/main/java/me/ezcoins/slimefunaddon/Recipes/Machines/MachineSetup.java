@@ -139,9 +139,11 @@ public class MachineSetup {
 
     public static final SlimefunItemStack ItemProcessor = new SlimefunItemStack("ITEMPROCESSOR",
             Material.PISTON,
-            "&6ItemTransmuter",
+            "&6Decompressor",
             "",
-            "&7Changes item properties"
+            "&7De-compresses items",
+            MachineLore.energyPerSecond(12),
+            MachineLore.energyBuffer(36)
     );
 
 

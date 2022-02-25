@@ -27,7 +27,7 @@ import java.util.Random;
 public final class MobData {
 
     private static final int CHAMBER_INTERVAL = 60;
-    private static final int CHAMBER_BUFFER = 15000;
+    private static final int CHAMBER_BUFFER = 7500;
     private static final int CHAMBER_ENERGY = 0;
     private static final int INFUSER_ENERGY = 20000;
 
@@ -121,7 +121,7 @@ public final class MobData {
     public static final SlimefunItemStack CREEPER = MobDataCard.create("Creeper", MobDataTier.HOSTILE);
 
     public static final SlimefunItemStack WITHER_SKELETON = MobDataCard.create("Wither Skeleton", MobDataTier.ADVANCED);
-    public static final SlimefunItemStack ENDERMEN = MobDataCard.create("Endermen", MobDataTier.ADVANCED);
+    public static final SlimefunItemStack ENDERMAN = MobDataCard.create("Enderman", MobDataTier.ADVANCED);
     public static final SlimefunItemStack GUARDIAN = MobDataCard.create("Guardian", MobDataTier.ADVANCED);
     public static final SlimefunItemStack IRON_GOLEM = MobDataCard.create("Iron Golem", MobDataTier.ADVANCED);
     public static final SlimefunItemStack BLAZE = MobDataCard.create("Blaze", MobDataTier.ADVANCED);
@@ -335,7 +335,7 @@ public final class MobData {
                 new SlimefunItemStack(MobData.HOSTILE_SOUL_ESSENCE, 24), getItem("FILLED_CREEPER_SOUL_JAR"), new SlimefunItemStack(MobData.HOSTILE_SOUL_ESSENCE, 24),
                 new ItemStack(Material.GUNPOWDER, 64), EMPTY_DATA_CARD, new ItemStack(Material.GUNPOWDER, 64),
                 new SlimefunItemStack(MobData.HOSTILE_SOUL_ESSENCE, 24), getItem("FILLED_CREEPER_SOUL_JAR"), new SlimefunItemStack(MobData.HOSTILE_SOUL_ESSENCE, 24)
-        }).addDrop(Material.GLOWSTONE_DUST, 1)
+        }).addDrop(Material.GUNPOWDER, 1)
                 .register(plugin);
 
         new MobDataCard(WITCH, MobDataTier.HOSTILE, new ItemStack[] {
@@ -351,46 +351,46 @@ public final class MobData {
                 .register(plugin);
 
         new MobDataCard(GUARDIAN, MobDataTier.ADVANCED, new ItemStack[] {
-                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16), getItem("FILLED_WITHER_SKELETON_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16),
-                new SlimefunItemStack(SlimefunItems.CARBONADO, 32), EMPTY_DATA_CARD, new ItemStack(Material.WITHER_SKELETON_SKULL, 32),
-                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16), getItem("FILLED_WITHER_SKELETON_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16)
-        }).addDrop(Material.BONE, 1)
-                .addDrop(Material.COAL, 1)
+                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16), getItem("FILLED_GUARDIAN_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16),
+                new ItemStack(Material.PRISMARINE_CRYSTALS, 32), EMPTY_DATA_CARD, new ItemStack(Material.PRISMARINE_CRYSTALS, 32),
+                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16), getItem("FILLED_GUARDIAN_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16)
+        }).addDrop(Material.PRISMARINE_SHARD, 1)
+                .addDrop(Material.PRISMARINE_CRYSTALS, 1 ,2)
                 .register(plugin);
 
         new MobDataCard(WITHER_SKELETON, MobDataTier.ADVANCED, new ItemStack[] {
-                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16), getItem("FILLED_WITHER_SKELETON_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16),
+                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 32), getItem("FILLED_WITHER_SKELETON_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 32),
                 new SlimefunItemStack(SlimefunItems.CARBONADO, 32), EMPTY_DATA_CARD, new ItemStack(Material.WITHER_SKELETON_SKULL, 32),
-                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16), getItem("FILLED_WITHER_SKELETON_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16)
+                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 32), getItem("FILLED_WITHER_SKELETON_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 32)
         }).addDrop(Material.BONE, 1)
                 .addDrop(Material.COAL, 1)
                 .register(plugin);
 
         new MobDataCard(IRON_GOLEM, MobDataTier.ADVANCED, new ItemStack[] {
-                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16), getItem("FILLED_WITHER_SKELETON_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16),
-                new SlimefunItemStack(SlimefunItems.CARBONADO, 32), EMPTY_DATA_CARD, new ItemStack(Material.WITHER_SKELETON_SKULL, 32),
-                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16), getItem("FILLED_WITHER_SKELETON_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16)
-        }).addDrop(Material.BONE, 1)
-                .addDrop(Material.COAL, 1)
+                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 32), getItem("FILLED_IRON_GOLEM_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 32),
+                new ItemStack(Material.IRON_BLOCK, 64), EMPTY_DATA_CARD, new ItemStack(Material.CARVED_PUMPKIN, 64),
+                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 32), getItem("FILLED_IRON_GOLEM_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 32)
+        }).addDrop(Material.IRON_INGOT, 3,1)
+                .addDrop(Material.IRON_INGOT, 4,1)
+                .addDrop(Material.IRON_INGOT, 5,1)
+                .addDrop(Material.POPPY, 1,2)
                 .register(plugin);
 
         new MobDataCard(BLAZE, MobDataTier.ADVANCED, new ItemStack[] {
-                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16), getItem("FILLED_WITHER_SKELETON_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16),
-                new SlimefunItemStack(SlimefunItems.CARBONADO, 32), EMPTY_DATA_CARD, new ItemStack(Material.WITHER_SKELETON_SKULL, 32),
-                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16), getItem("FILLED_WITHER_SKELETON_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16)
-        }).addDrop(Material.BONE, 1)
-                .addDrop(Material.COAL, 1)
+                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 24), getItem("FILLED_BLAZE_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 24),
+                new ItemStack(Material.BLAZE_ROD, 64), EMPTY_DATA_CARD, new ItemStack(Material.BLAZE_ROD, 64),
+                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 24), getItem("FILLED_BLAZE_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 24)
+        }).addDrop(Material.BLAZE_ROD, 1)
                 .register(plugin);
 
-        new MobDataCard(ENDERMEN, MobDataTier.ADVANCED, new ItemStack[] {
-                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16), getItem("FILLED_WITHER_SKELETON_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16),
-                new SlimefunItemStack(SlimefunItems.CARBONADO, 32), EMPTY_DATA_CARD, new ItemStack(Material.WITHER_SKELETON_SKULL, 32),
-                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16), getItem("FILLED_WITHER_SKELETON_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 16)
-        }).addDrop(Material.BONE, 1)
-                .addDrop(Material.COAL, 1)
+        new MobDataCard(ENDERMAN, MobDataTier.ADVANCED, new ItemStack[] {
+                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 24), getItem("FILLED_ENDERMAN_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 24),
+                new ItemStack(Material.ENDER_PEARL, 16), EMPTY_DATA_CARD, new ItemStack(Material.ENDER_PEARL, 16),
+                new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 24), getItem("FILLED_ENDERMAN_SOUL_JAR"), new SlimefunItemStack(MobData.ADVANCED_SOUL_ESSENCE, 24)
+        }).addDrop(Material.ENDER_PEARL, 1)
                 .register(plugin);
 
-        new MobDataCard(ELDER_GUARDIAN, MobDataTier.BOSS, new ItemStack[] {
+        new MobDataCard(ELDER_GUARDIAN, MobDataTier.MINI_BOSS, new ItemStack[] {
                 new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6), getItem("GUARDIAN_DATA_CARD"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6),
                 new ItemStack(Material.SPONGE, 64), EMPTY_DATA_CARD, new ItemStack(Material.SEA_LANTERN, 64),
                 new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6), getItem("GUARDIAN_DATA_CARD"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6)
@@ -399,22 +399,21 @@ public final class MobData {
                 .addDrop(Material.SPONGE, 1, 50)
                 .register(plugin);
 
-        new MobDataCard(WITHER, MobDataTier.BOSS, new ItemStack[] {
-                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6), getItem("FILLED_GUARDIAN_SOUL_JAR"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6),
-                new ItemStack(Material.SPONGE, 64), EMPTY_DATA_CARD, new ItemStack(Material.SEA_LANTERN, 64),
-                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6), getItem("FILLED_GUARDIAN_SOUL_JAR"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6)
-        }).addDrop(Material.PRISMARINE_SHARD, 3, 1)
-                .addDrop(Material.PRISMARINE_CRYSTALS, 3, 1)
-                .addDrop(Material.SPONGE, 1, 50)
+        new MobDataCard(ENDER_DRAGON, MobDataTier.BOSS, new ItemStack[] {
+                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 12), getItem("ENDERMAN_DATA_CARD"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 12),
+                new ItemStack(Material.ENDER_EYE, 64), EMPTY_DATA_CARD, new ItemStack(Material.END_CRYSTAL, 64),
+                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 12), getItem("ENDERMAN_DATA_CARD"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 12)
+        }).addDrop(Material.ENDER_EYE, 4, 1)
+                .addDrop(Material.ENDER_EYE, 5, 1)
                 .register(plugin);
 
-        new MobDataCard(ENDER_DRAGON, MobDataTier.BOSS, new ItemStack[] {
-                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6), getItem("FILLED_GUARDIAN_SOUL_JAR"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6),
-                new ItemStack(Material.SPONGE, 64), EMPTY_DATA_CARD, new ItemStack(Material.SEA_LANTERN, 64),
-                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6), getItem("FILLED_GUARDIAN_SOUL_JAR"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6)
-        }).addDrop(Material.PRISMARINE_SHARD, 3, 1)
-                .addDrop(Material.PRISMARINE_CRYSTALS, 3, 1)
-                .addDrop(Material.SPONGE, 1, 50)
+        new MobDataCard(WITHER, MobDataTier.MINI_BOSS, new ItemStack[] {
+                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 20), getItem("WITHER_SKELETON_DATA_CARD"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 20),
+                new ItemStack(Material.NETHER_STAR, 64), EMPTY_DATA_CARD, new SlimefunItemStack(SlimefunItems.WITHER_ASSEMBLER, 5),
+                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 20), getItem("WITHER_SKELETON_DATA_CARD"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 20)
+        }).addDrop(Material.NETHER_STAR, 1, 1)
+                .addDrop(SlimefunItems.CARBON, 4,2)
+                .addDrop(SlimefunItems.COMPRESSED_CARBON, 2,5)
                 .register(plugin);
 
 

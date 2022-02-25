@@ -4,16 +4,13 @@ import java.util.EnumMap;
 import java.util.concurrent.ThreadLocalRandom;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import io.github.mooy1.infinitylib.machines.MachineBlock;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import lombok.experimental.UtilityClass;
 import me.ezcoins.slimefunaddon.Core.*;
 import me.ezcoins.slimefunaddon.Machines.Factory.*;
 import me.ezcoins.slimefunaddon.Machines.QOL.*;
 import me.ezcoins.slimefunaddon.EasySlimefunAddon;
-import me.ezcoins.slimefunaddon.Recipes.Materials.MaterialRecipes;
 import me.ezcoins.slimefunaddon.Recipes.Materials.MaterialsSetup;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -110,9 +107,14 @@ public class MachineRecipes {
 
 
 
-        new ItemProcessor(Groups.EzMachines, MachineSetup.ItemProcessor, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[]{null})
-                .register(EasySlimefunAddon.plugin);
+        new Decompressor(Groups.EzMachines, MachineSetup.ItemProcessor, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{
+                        null, SlimefunItems.ELECTRIC_ORE_GRINDER_2, null,
+                        SlimefunItems.HARDENED_METAL_INGOT, new ItemStack(Material.PISTON), SlimefunItems.HARDENED_METAL_INGOT,
+                        SlimefunItems.ELECTRIC_MOTOR, MaterialsSetup.MACHINE_MOTOR, SlimefunItems.ELECTRIC_MOTOR})
+                .register(plugin);
+
+
 
 
 
@@ -184,11 +186,5 @@ public class MachineRecipes {
         public ItemStack clone() {
             return this.items[ThreadLocalRandom.current().nextInt(this.items.length)].clone();
         }
-    }
-
-    @Nullable
-    public static ItemStack getItem(@Nonnull String id) {
-        SlimefunItem item = SlimefunItem.getById(id);
-        return item != null ? item.getItem() : null;
     }
 }

@@ -20,7 +20,6 @@ public class CombustionGenerator extends AGenerator {
     @Override
     protected void registerDefaultFuelTypes() {
         registerFuel(new MachineFuel(2, new ItemStack(Material.GUNPOWDER)));
-        registerFuel(new MachineFuel(5, new ItemStack(Material.FIREWORK_ROCKET)));
         registerFuel(new MachineFuel(15, new ItemStack(Material.TNT)));
         registerFuel(new MachineFuel(30, new ItemStack(Material.END_CRYSTAL)));
 

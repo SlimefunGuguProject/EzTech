@@ -23,10 +23,10 @@ public enum MobDataTier {
     ADVANCED(4, 600, Material.RED_DYE),
 
     // ex: wither
-    MINI_BOSS(32, 4500, Material.NETHERITE_CHESTPLATE),
+    MINI_BOSS(32, 2000, Material.BLACK_DYE),
 
     // ex: ender dragon
-    BOSS(96, 9000, Material.BLACK_DYE);
+    BOSS(200, 2000, Material.BLACK_DYE);
 
     final int xp;
     final int energy;

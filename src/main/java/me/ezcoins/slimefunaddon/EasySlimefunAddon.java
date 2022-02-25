@@ -2,8 +2,8 @@ package me.ezcoins.slimefunaddon;
 
 import io.github.mooy1.infinitylib.core.AbstractAddon;
 import me.ezcoins.slimefunaddon.Core.Groups;
-import me.ezcoins.slimefunaddon.Credits.Credits;
 import me.ezcoins.slimefunaddon.Machines.MobChamber.MobData;
+import me.ezcoins.slimefunaddon.Recipes.Credits.Credits;
 import me.ezcoins.slimefunaddon.Recipes.Generators.GeneratorRecipes;
 import me.ezcoins.slimefunaddon.Recipes.Machines.MachineRecipes;
 import me.ezcoins.slimefunaddon.Recipes.Materials.MaterialRecipes;
