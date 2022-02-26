@@ -33,13 +33,13 @@ public final class MobData {
 
 
     public static final SlimefunItemStack EMPTY_DATA_CARD = new SlimefunItemStack(
-            "EMPTY_DATA_CARD",
+            "EMPTY_DATA_CHIP",
             Material.GRAY_DYE,
             "&8Empty Data Chip",
             "&7Infuse with a mob data to fill"
     );
     public static final SlimefunItemStack INFUSER = new SlimefunItemStack(
-            "DATA_INFUSER",
+            "CHI_INFUSER",
             Material.NETHERITE_BLOCK,
             "&7&lChip Infuser",
             "&7Create Infused Chips with mob data",
@@ -47,7 +47,7 @@ public final class MobData {
             MachineLore.energy(INFUSER_ENERGY) + "per use"
     );
     public static final SlimefunItemStack CHAMBER = new SlimefunItemStack(
-            "MOB_SIMULATION_CHAMBER",
+            "MOB_CHAMBER",
             Material.SEA_LANTERN,
             "&8&lMob Chamber",
             "&7Use mob data chips to activate",
@@ -391,26 +391,26 @@ public final class MobData {
                 .register(plugin);
 
         new MobDataCard(ELDER_GUARDIAN, MobDataTier.MINI_BOSS, new ItemStack[] {
-                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6), getItem("GUARDIAN_DATA_CARD"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6),
+                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6), getItem("GUARDIAN_DATA_CHIP"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6),
                 new ItemStack(Material.SPONGE, 64), EMPTY_DATA_CARD, new ItemStack(Material.SEA_LANTERN, 64),
-                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6), getItem("GUARDIAN_DATA_CARD"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6)
+                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6), getItem("GUARDIAN_DATA_CHIP"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 6)
         }).addDrop(Material.PRISMARINE_SHARD, 3, 1)
                 .addDrop(Material.PRISMARINE_CRYSTALS, 3, 1)
                 .addDrop(Material.SPONGE, 1, 50)
                 .register(plugin);
 
         new MobDataCard(ENDER_DRAGON, MobDataTier.BOSS, new ItemStack[] {
-                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 12), getItem("ENDERMAN_DATA_CARD"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 12),
+                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 12), getItem("ENDERMAN_DATA_CHIP"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 12),
                 new ItemStack(Material.ENDER_EYE, 64), EMPTY_DATA_CARD, new ItemStack(Material.END_CRYSTAL, 64),
-                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 12), getItem("ENDERMAN_DATA_CARD"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 12)
+                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 12), getItem("ENDERMAN_DATA_CHIP"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 12)
         }).addDrop(Material.ENDER_EYE, 4, 1)
                 .addDrop(Material.ENDER_EYE, 5, 1)
                 .register(plugin);
 
         new MobDataCard(WITHER, MobDataTier.MINI_BOSS, new ItemStack[] {
-                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 20), getItem("WITHER_SKELETON_DATA_CARD"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 20),
+                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 20), getItem("WITHER_SKELETON_DATA_CHIP"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 20),
                 new ItemStack(Material.NETHER_STAR, 64), EMPTY_DATA_CARD, new SlimefunItemStack(SlimefunItems.WITHER_ASSEMBLER, 5),
-                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 20), getItem("WITHER_SKELETON_DATA_CARD"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 20)
+                new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 20), getItem("WITHER_SKELETON_DATA_CHIP"), new SlimefunItemStack(MobData.BOSS_SOUL_ESSENCE, 20)
         }).addDrop(Material.NETHER_STAR, 1, 1)
                 .addDrop(SlimefunItems.CARBON, 4,2)
                 .addDrop(SlimefunItems.COMPRESSED_CARBON, 2,5)

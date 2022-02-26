@@ -110,6 +110,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.github.NCBPFluffyBear</groupId>
+            <artifactId>FluffyMachines</artifactId>
+            <version>79408746ca</version>
+        </dependency>
+
+        <dependency>
             <groupId>io.github.mooy1</groupId>
             <artifactId>InfinityLib</artifactId>
             <version>1.3.4</version>

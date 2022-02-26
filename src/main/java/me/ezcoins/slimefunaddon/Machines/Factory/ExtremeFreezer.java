@@ -6,6 +6,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import me.ezcoins.slimefunaddon.Recipes.Materials.MaterialsSetup;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import org.bukkit.Material;
@@ -27,12 +28,13 @@ public class ExtremeFreezer extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(3, new ItemStack(Material.WATER_BUCKET), (new SlimefunItemStack(SlimefunItems.REACTOR_COOLANT_CELL,1)));
+            registerRecipe(3, new ItemStack[] { new ItemStack(Material.WATER_BUCKET, 1) }, new ItemStack[] { new ItemStack(Material.BUCKET), new SlimefunItemStack(SlimefunItems.REACTOR_COOLANT_CELL, 1) });
+            registerRecipe(3, new ItemStack[] { new ItemStack(Material.LAVA_BUCKET, 1) }, new ItemStack[] { new ItemStack(Material.BUCKET, 1), new ItemStack(Material.OBSIDIAN) });
 
 
         } else {
-            registerRecipe(3, new ItemStack(Material.WATER_BUCKET), (new SlimefunItemStack(SlimefunItems.REACTOR_COOLANT_CELL,1)));
-
+            registerRecipe(3, new ItemStack[] { new ItemStack(Material.WATER_BUCKET, 1) }, new ItemStack[] { new ItemStack(Material.BUCKET), new SlimefunItemStack(SlimefunItems.REACTOR_COOLANT_CELL, 1) });
+            registerRecipe(3, new ItemStack[] { new ItemStack(Material.LAVA_BUCKET, 1) }, new ItemStack[] { new ItemStack(Material.BUCKET, 1), new ItemStack(Material.OBSIDIAN) });
 
 
         }

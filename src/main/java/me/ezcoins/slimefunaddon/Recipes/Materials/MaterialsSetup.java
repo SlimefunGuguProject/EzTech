@@ -35,7 +35,7 @@ public class MaterialsSetup {
 
     public static final SlimefunItemStack MACHINEPLATING = new SlimefunItemStack("MACHINEPLATING",
             Material.PAPER,
-            "&bMachine Plating"
+            "&bMachine Plate"
     );
 
     public static final SlimefunItemStack MACHINECHASSIS = new SlimefunItemStack("MACHINECHASSIS",
@@ -50,10 +50,14 @@ public class MaterialsSetup {
             "&7Used to craft Night Generators"
     );
 
+    public static final SlimefunItemStack FROZEN_LAVA = new SlimefunItemStack("FROZEN_LAVA",
+            "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmI4NTEzYzYxNjQ5NTg0OWNmOTFiNzY1MzZlODcyZTIwMDFhNjFjNWRiNDJhYzQwZDFiMjBhNzM0MjVkM2E5NSJ9fX0=",
+            "&4Frozen Lava"
+    );
+
     public static final SlimefunItemStack COS = new SlimefunItemStack("COS",
             Material.BARRIER,
-            "&c&lComing soon!",
-            ""
+            "&c&lComing soon!"
     );
 
 

@@ -27,25 +27,25 @@ public class PresCarbonPress extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(3, new ItemStack(Material.OAK_LOG, 16), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
-            registerRecipe(3, new ItemStack(Material.DARK_OAK_LOG, 16), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
-            registerRecipe(3, new ItemStack(Material.SPRUCE_LOG, 16), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
-            registerRecipe(3, new ItemStack(Material.JUNGLE_LOG, 16), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
-            registerRecipe(3, new ItemStack(Material.BIRCH_LOG, 16), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
-            registerRecipe(3, new ItemStack(Material.ACACIA_LOG, 16), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
-            registerRecipe(3, new ItemStack(Material.CRIMSON_STEM, 16), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
-            registerRecipe(3, new ItemStack(Material.WARPED_STEM, 16), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
+            registerRecipe(3, new ItemStack(Material.OAK_LOG, 32), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
+            registerRecipe(3, new ItemStack(Material.DARK_OAK_LOG, 32), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
+            registerRecipe(3, new ItemStack(Material.SPRUCE_LOG, 32), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
+            registerRecipe(3, new ItemStack(Material.JUNGLE_LOG, 32), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
+            registerRecipe(3, new ItemStack(Material.BIRCH_LOG, 32), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
+            registerRecipe(3, new ItemStack(Material.ACACIA_LOG, 32), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
+            registerRecipe(3, new ItemStack(Material.CRIMSON_STEM, 32), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
+            registerRecipe(3, new ItemStack(Material.WARPED_STEM, 32), (new SlimefunItemStack(SlimefunItems.CARBON,2)));
 
 
         } else {
-            registerRecipe(3, new ItemStack(Material.OAK_LOG, 16), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
-            registerRecipe(3, new ItemStack(Material.DARK_OAK_LOG, 16), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
-            registerRecipe(3, new ItemStack(Material.SPRUCE_LOG, 16), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
-            registerRecipe(3, new ItemStack(Material.JUNGLE_LOG, 16), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
-            registerRecipe(3, new ItemStack(Material.BIRCH_LOG, 16), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
-            registerRecipe(3, new ItemStack(Material.ACACIA_LOG, 16), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
-            registerRecipe(3, new ItemStack(Material.CRIMSON_STEM, 16), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
-            registerRecipe(3, new ItemStack(Material.WARPED_STEM, 16), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
+            registerRecipe(3, new ItemStack(Material.OAK_LOG, 32), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
+            registerRecipe(3, new ItemStack(Material.DARK_OAK_LOG, 32), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
+            registerRecipe(3, new ItemStack(Material.SPRUCE_LOG, 32), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
+            registerRecipe(3, new ItemStack(Material.JUNGLE_LOG, 32), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
+            registerRecipe(3, new ItemStack(Material.BIRCH_LOG, 32), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
+            registerRecipe(3, new ItemStack(Material.ACACIA_LOG, 32), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
+            registerRecipe(3, new ItemStack(Material.CRIMSON_STEM, 32), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
+            registerRecipe(3, new ItemStack(Material.WARPED_STEM, 32), (new SlimefunItemStack(SlimefunItems.CARBON,1)));
 
 
 

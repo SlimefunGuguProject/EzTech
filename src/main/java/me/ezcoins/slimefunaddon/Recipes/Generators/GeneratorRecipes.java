@@ -40,14 +40,14 @@ public class GeneratorRecipes {
                 .register(plugin);
 
         new SolarGenerator(Groups.EzGenerators, 1028, 1028, GeneratorSetup.OVERLOADED_CYCLE_GENERATOR, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[]{GeneratorSetup.ENERGIZED_LUNAR_GENERATOR, SlimefunItems.REINFORCED_PLATE, GeneratorSetup.ENERGIZED_LUNAR_GENERATOR,
-                        SlimefunItems.REINFORCED_PLATE, SlimefunItems.ELECTRO_MAGNET, SlimefunItems.REINFORCED_PLATE,
-                        SlimefunItems.SOLAR_GENERATOR_4, SlimefunItems.REINFORCED_PLATE, SlimefunItems.SOLAR_GENERATOR_4})
+                new ItemStack[]{GeneratorSetup.ENERGIZED_LUNAR_GENERATOR, MaterialsSetup.MACHINEPLATING, GeneratorSetup.ENERGIZED_LUNAR_GENERATOR,
+                        MaterialsSetup.MACHINEPLATING, SlimefunItems.ELECTRO_MAGNET, MaterialsSetup.MACHINEPLATING,
+                        SlimefunItems.SOLAR_GENERATOR_4, MaterialsSetup.MACHINEPLATING, SlimefunItems.SOLAR_GENERATOR_4})
                 .register(plugin);
 
 
         new CombustionGenerator(Groups.EzGenerators, GeneratorSetup.CombustionGenerator, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[]{SlimefunItems.ELECTRO_MAGNET, SlimefunItems.BLISTERING_INGOT_2, SlimefunItems.ELECTRO_MAGNET,
+                new ItemStack[]{SlimefunItems.ELECTRO_MAGNET, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.ELECTRO_MAGNET,
                         SlimefunItems.REINFORCED_ALLOY_INGOT, new ItemStack(Material.DIAMOND_BLOCK), SlimefunItems.REINFORCED_ALLOY_INGOT,
                         SlimefunItems.ELECTRIC_MOTOR, MaterialsSetup.MACHINE_MOTOR, SlimefunItems.ELECTRIC_MOTOR})
                 .setCapacity(360)

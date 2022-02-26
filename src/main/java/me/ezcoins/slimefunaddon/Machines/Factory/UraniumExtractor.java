@@ -9,6 +9,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import org.bukkit.Material;
+import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -27,11 +28,11 @@ public class UraniumExtractor extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(20, new ItemStack(Material.COBBLESTONE, 64), (new SlimefunItemStack(SlimefunItems.URANIUM,1)));
+            registerRecipe(40, new ItemStack[] { new ItemStack(Material.COBBLESTONE, 64) }, new ItemStack[] { new SlimefunItemStack(SlimefunItems.URANIUM, 1) });
 
 
         } else {
-            registerRecipe(20, new ItemStack(Material.COBBLESTONE, 64), (new SlimefunItemStack(SlimefunItems.URANIUM,1)));
+            registerRecipe(40, new ItemStack[] { new ItemStack(Material.COBBLESTONE, 64) }, new ItemStack[] { new SlimefunItemStack(SlimefunItems.URANIUM, 1) });
 
 
 

@@ -33,7 +33,7 @@ public class MachineRecipes {
         new PresCarbonPress(Groups.EzMachines, MachineSetup.PresCarbonPress, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{SlimefunItems.ELECTRO_MAGNET, SlimefunItems.CARBONADO_EDGED_FURNACE, SlimefunItems.ELECTRO_MAGNET,
                         SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.CARBON_PRESS, SlimefunItems.REINFORCED_ALLOY_INGOT,
-                        SlimefunItems.CARBON, MaterialsSetup.MACHINECHASSIS, SlimefunItems.CARBON})
+                        SlimefunItems.CARBONADO, MaterialsSetup.MACHINECHASSIS, SlimefunItems.CARBONADO})
                 .register(EasySlimefunAddon.plugin);
 
         new SaltShaker(Groups.EzMachines, MachineSetup.SaltShaker, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -43,7 +43,7 @@ public class MachineRecipes {
                 .register(EasySlimefunAddon.plugin);
 
         new CookieMaker(Groups.EzMachines, MachineSetup.CookieMaker, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[]{null, SlimefunItems.CROP_GROWTH_ACCELERATOR_2, null,
+                new ItemStack[]{null, new ItemStack(Material.COOKIE, 64), null,
                         SlimefunItems.REINFORCED_ALLOY_INGOT, new ItemStack(Material.HAY_BLOCK), SlimefunItems.REINFORCED_ALLOY_INGOT,
                         SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.SMALL_CAPACITOR, SlimefunItems.ELECTRIC_MOTOR})
                 .register(EasySlimefunAddon.plugin);
@@ -56,8 +56,8 @@ public class MachineRecipes {
 
         new Hydronator(Groups.EzMachines, MachineSetup.Hydronator, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{null, new ItemStack(Material.DIAMOND_PICKAXE), null,
-                        new ItemStack(Material.WATER_BUCKET), MaterialsSetup.MACHINECHASSIS, new ItemStack(Material.WATER_BUCKET),
-                        new ItemStack(Material.WHITE_CONCRETE), SlimefunItems.PROGRAMMABLE_ANDROID_MINER, new ItemStack(Material.WHITE_CONCRETE)})
+                        new ItemStack(Material.WATER_BUCKET), SlimefunItems.PROGRAMMABLE_ANDROID_MINER, new ItemStack(Material.WATER_BUCKET),
+                        new ItemStack(Material.WHITE_CONCRETE), MaterialsSetup.MACHINE_MOTOR, new ItemStack(Material.WHITE_CONCRETE)})
                 .register(EasySlimefunAddon.plugin);
 
 
@@ -80,11 +80,11 @@ public class MachineRecipes {
                 new SlimefunItemStack(SlimefunItems.MAGNESIUM_INGOT, 1)
         );
         new MachineBlock(Groups.EzMachines, MachineSetup.INGOTEXTRACTOR, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
-                SlimefunItems.ELECTRIC_DUST_WASHER_3, SlimefunItems.HEATING_COIL, SlimefunItems.ELECTRIC_ORE_GRINDER_2,
-                SlimefunItems.ELECTRIC_GOLD_PAN_3, MaterialsSetup.MACHINECHASSIS, SlimefunItems.ELECTRIC_INGOT_FACTORY_3,
-                MaterialsSetup.PLATINUM, MaterialsSetup.MACHINE_MOTOR, MaterialsSetup.PLATINUM
+                SlimefunItems.ELECTRIC_GOLD_PAN_3, MaterialsSetup.MACHINEPLATING, SlimefunItems.ELECTRIC_GOLD_PAN_3,
+                SlimefunItems.ELECTRIC_DUST_WASHER_3, SlimefunItems.ELECTRIC_INGOT_FACTORY_2, SlimefunItems.ELECTRIC_DUST_WASHER_3,
+                SlimefunItems.ELECTRIC_ORE_GRINDER_3, MaterialsSetup.MACHINE_MOTOR, SlimefunItems.ELECTRIC_ORE_GRINDER_3
 
-        }).addRecipe(twoIngot, new ItemStack(Material.COBBLESTONE, 2)).ticksPerOutput(3).
+        }).addRecipe(twoIngot, new ItemStack(Material.COBBLESTONE, 2)).ticksPerOutput(2).
                 energyPerTick(300).register(EasySlimefunAddon.plugin);
 
         new GoldRefinery(Groups.EzMachines, MachineSetup.GOLDREFINERY, RecipeType.ENHANCED_CRAFTING_TABLE,

@@ -93,7 +93,7 @@ public class MachineSetup {
             "",
             "&7Refines cobblestone into &curanium",
             "",
-            MachineLore.speed(4),
+            MachineLore.speed(2),
             MachineLore.energyPerSecond(240)
     );
 

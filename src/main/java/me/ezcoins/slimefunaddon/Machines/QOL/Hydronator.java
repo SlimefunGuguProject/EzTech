@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hydronator extends AContainer implements RecipeDisplayItem{
-    public static final int ENERGY_CONSUMPTION = 20;
+    public static final int ENERGY_CONSUMPTION = 40;
     public static final int CAPACITY = ENERGY_CONSUMPTION * 3;
     public static final int SPEED = 1;
     private final ItemSetting<Boolean> useVanillaRatios = new ItemSetting<>(this, "use-vanilla-ratios", false);
@@ -27,43 +27,44 @@ public class Hydronator extends AContainer implements RecipeDisplayItem{
     @Override
     protected void registerDefaultRecipes() {
         if (useVanillaRatios.getValue()) {
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.RED_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.RED_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.ORANGE_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.ORANGE_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.YELLOW_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.YELLOW_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.LIME_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.LIME_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.GREEN_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.GREEN_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.LIGHT_BLUE_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.LIGHT_BLUE_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.CYAN_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.CYAN_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.BLUE_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.BLUE_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.PINK_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.PINK_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.MAGENTA_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.MAGENTA_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.PURPLE_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.PURPLE_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.WHITE_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.WHITE_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.LIGHT_GRAY_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.LIGHT_GRAY_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.GRAY_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.GRAY_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.BLACK_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.BLACK_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.BROWN_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.BROWN_CONCRETE) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.RED_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.RED_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.ORANGE_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.ORANGE_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.YELLOW_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.YELLOW_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.LIME_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.LIME_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.GREEN_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.GREEN_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.LIGHT_BLUE_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.LIGHT_BLUE_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.CYAN_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.CYAN_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.BLUE_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.BLUE_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.PINK_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.PINK_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.MAGENTA_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.MAGENTA_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.PURPLE_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.PURPLE_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.WHITE_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.WHITE_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.LIGHT_GRAY_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.LIGHT_GRAY_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.GRAY_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.GRAY_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.BLACK_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.BLACK_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.BROWN_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.BROWN_CONCRETE, 8) });
 
 
 
 
         } else {
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.RED_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.RED_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.ORANGE_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.ORANGE_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.YELLOW_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.YELLOW_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.LIME_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.LIME_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.GREEN_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.GREEN_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.LIGHT_BLUE_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.LIGHT_BLUE_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.CYAN_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.CYAN_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.BLUE_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.BLUE_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.PINK_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.PINK_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.MAGENTA_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.MAGENTA_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.PURPLE_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.PURPLE_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.WHITE_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.WHITE_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.LIGHT_GRAY_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.LIGHT_GRAY_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.GRAY_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.GRAY_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.BLACK_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.BLACK_CONCRETE) });
-            registerRecipe(2, new ItemStack[] { new ItemStack(Material.BROWN_CONCRETE_POWDER) }, new ItemStack[] { new ItemStack(Material.BROWN_CONCRETE) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.RED_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.RED_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.ORANGE_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.ORANGE_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.YELLOW_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.YELLOW_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.LIME_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.LIME_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.GREEN_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.GREEN_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.LIGHT_BLUE_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.LIGHT_BLUE_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.CYAN_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.CYAN_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.BLUE_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.BLUE_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.PINK_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.PINK_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.MAGENTA_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.MAGENTA_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.PURPLE_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.PURPLE_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.WHITE_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.WHITE_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.LIGHT_GRAY_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.LIGHT_GRAY_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.GRAY_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.GRAY_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.BLACK_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.BLACK_CONCRETE, 8) });
+            registerRecipe(4, new ItemStack[] { new ItemStack(Material.BROWN_CONCRETE_POWDER, 8) }, new ItemStack[] { new ItemStack(Material.BROWN_CONCRETE, 8) });
+
 
 
         }
