@@ -50,7 +50,7 @@ public final class MobData {
             "MOB_CHAMBER",
             Material.SEA_LANTERN,
             "&8&lEZ生物模拟室",
-            "&7使用生物芯片以激活",
+            "&7使用生物芯片激活",
             "",
             MachineLore.energyBuffer(CHAMBER_BUFFER),
             MachineLore.energyPerSecond(CHAMBER_ENERGY)
@@ -61,7 +61,7 @@ public final class MobData {
             Material.GHAST_TEAR,
             "&a被动灵魂精华",
             "",
-            "&7灵魂掠夺者的精华，用于被动生物"
+            "&7灵魂掠夺者的被动生物精华"
     );
 
     public static final SlimefunItemStack NEUTRAL_SOUL_ESSENCE = new SlimefunItemStack(
@@ -69,7 +69,7 @@ public final class MobData {
             Material.SLIME_BALL,
             "&e中立灵魂精华",
             "",
-            "&7灵魂掠夺者的精华，用于中立生物"
+            "&7灵魂掠夺者的中立生物精华"
     );
 
     public static final SlimefunItemStack HOSTILE_SOUL_ESSENCE = new SlimefunItemStack(
@@ -77,7 +77,7 @@ public final class MobData {
             Material.MAGMA_CREAM,
             "&6敌对灵魂精华",
             "",
-            "&7灵魂掠夺者的精华，用于敌对生物"
+            "&7灵魂掠夺者的敌对生物精华"
     );
 
     public static final SlimefunItemStack ADVANCED_SOUL_ESSENCE = new SlimefunItemStack(
@@ -85,7 +85,7 @@ public final class MobData {
             Material.BLAZE_POWDER,
             "&c高级灵魂精华",
             "",
-            "&7灵魂掠夺者的精华，用于高级生物"
+            "&7灵魂掠夺者的高级生物精华"
     );
 
     public static final SlimefunItemStack BOSS_SOUL_ESSENCE = new SlimefunItemStack(
@@ -93,7 +93,7 @@ public final class MobData {
             Material.DRAGON_BREATH,
             "&4&lBoss灵魂精华",
             "",
-            "&7灵魂掠夺者的精华，用于Boss生物"
+            "&7灵魂掠夺者的Boss生物精华"
     );
 
     public static final SlimefunItemStack SoulReaver = MobDataCard.create("灵魂掠夺者", MobDataTier.MISC);
