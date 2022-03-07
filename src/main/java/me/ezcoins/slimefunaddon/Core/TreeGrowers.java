@@ -23,7 +23,6 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 
-
 public final class TreeGrowers extends AbstractMachineBlock implements RecipeDisplayItem {
 
     private static final int[] OUTPUT_SLOTS = {
@@ -34,8 +33,8 @@ public final class TreeGrowers extends AbstractMachineBlock implements RecipeDis
     };
     private static final int[] INPUT_SLOTS = { 40 };
     private static final int STATUS_SLOT = 49;
-    private static final ItemStack GROWING = new CustomItemStack(Material.LIME_STAINED_GLASS_PANE, "&aProducing!");
-    private static final ItemStack INPUT_PLANT = new CustomItemStack(Material.BLUE_STAINED_GLASS_PANE, "&9Input a sapling!");
+    private static final ItemStack GROWING = new CustomItemStack(Material.LIME_STAINED_GLASS_PANE, "&a运行中!");
+    private static final ItemStack INPUT_PLANT = new CustomItemStack(Material.BLUE_STAINED_GLASS_PANE, "&9请先放入一棵树苗!");
 
     @Setter
     private EnumMap<Material, ItemStack[]> recipes;

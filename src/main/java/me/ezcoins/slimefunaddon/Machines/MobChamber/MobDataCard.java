@@ -28,10 +28,10 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
 
     public static SlimefunItemStack create(String name, MobDataTier tier) {
         return new SlimefunItemStack(
-                name.toUpperCase(Locale.ROOT).replace(" ", "_") + "_DATA_CHIP",
+                name.toUpperCase(Locale.ROOT).replace(" ", "_") + "_DATA_CHIP_EZ",
                 tier.material,
-                "&9" + name + " Data Chip",
-                "&7Place in a Mob Chamber to activate",
+                "&9EZ " + name + " 生物芯片",
+                "&7放在EZ生物模拟室中使用",
                 "",
                 MachineLore.energyPerSecond(tier.energy)
         );

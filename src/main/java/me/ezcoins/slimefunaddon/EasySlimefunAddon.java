@@ -45,6 +45,7 @@ public final class EasySlimefunAddon extends AbstractAddon implements SlimefunAd
 
         getLogger().info("----------------------------------------");
         getLogger().info("|          QOL-Addon ~ EzCoins          |");
+        getLogger().info("|           汉化者 ~ haiman233           |");
         getLogger().info("----------------------------------------");
 
 

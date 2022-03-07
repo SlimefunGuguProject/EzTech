@@ -30,7 +30,7 @@ public final class MobSimulationChamber extends TickingMenuBlock implements Ener
 
     static final double XP_MULTIPLIER = 1;
 
-    private static final ItemStack NO_CARD = new CustomItemStack(Material.BARRIER, "&cInput a Mob Data Card!");
+    private static final ItemStack NO_CARD = new CustomItemStack(Material.BARRIER, "&c在此放入EZ生物芯片!");
     private static final int CARD_SLOT = 49;
     private static final int STATUS_SLOT = 52;
     private static final int[] OUTPUT_SLOTS = {
@@ -119,7 +119,7 @@ public final class MobSimulationChamber extends TickingMenuBlock implements Ener
     }
 
     private static ItemStack makeXpItem(int stored) {
-        return new CustomItemStack(Material.EXPERIENCE_BOTTLE, "&aStored xp: " + stored, "", "&a> Click to claim");
+        return new CustomItemStack(Material.EXPERIENCE_BOTTLE, "&a所储经验: " + stored, "", "&a> 单击获取");
     }
 
     @Override
@@ -154,7 +154,7 @@ public final class MobSimulationChamber extends TickingMenuBlock implements Ener
 
         if (inv.hasViewer()) {
             inv.replaceExistingItem(STATUS_SLOT, new CustomItemStack(Material.DAYLIGHT_DETECTOR,
-                    "&aSlurping Energy... (" + MachineLore.formatEnergy(energy) + " J/s)")
+                    "&a消耗能量 (" + MachineLore.formatEnergy(energy) + " J/s)")
             );
             inv.replaceExistingItem(XP_SLOT, makeXpItem(xp));
         }

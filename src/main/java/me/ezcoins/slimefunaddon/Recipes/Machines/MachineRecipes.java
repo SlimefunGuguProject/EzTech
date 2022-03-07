@@ -107,7 +107,6 @@ public class MachineRecipes {
 
 
 
-
         new Decompressor(Groups.EzMachines, MachineSetup.ItemProcessor, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
                         null, SlimefunItems.ELECTRIC_ORE_GRINDER_2, null,
