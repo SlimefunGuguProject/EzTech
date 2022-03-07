@@ -30,7 +30,7 @@ public final class MobDataCard extends SlimefunItem implements RecipeDisplayItem
         return new SlimefunItemStack(
                 name.toUpperCase(Locale.ROOT).replace(" ", "_") + "_DATA_CHIP_EZ",
                 tier.material,
-                "&9EZ " + name + " 生物芯片",
+                "&9EZ" + name + "生物芯片",
                 "&7放在EZ生物模拟室中使用",
                 "",
                 MachineLore.energyPerSecond(tier.energy)
