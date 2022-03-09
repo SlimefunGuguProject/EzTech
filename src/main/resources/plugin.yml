@@ -1,17 +1,17 @@
 ## CHANGE this to the name of your plugin.
-name: EzSlimeFunAddon
+name: CavernTech
 
 ## CHANGE this to your username.
 author: EzCoins
 
 ## CHANGE this to a meaninful but short description of your plugin.
-description: A new slimefun addon
+description: CavernTech
 
 ## CHANGE this to the path of the class that extends JavaPlugin.
-main: me.ezcoins.slimefunaddon.EasySlimefunAddon
+main: me.ezcoins.CavernTech.CavernTech
 
 ## You can change this to link to your website or repository. You can also remove this line if you want to.
-website: https://github.com/Slimefun/Addon-Template
+website: wiki.thecavern.net
 
 ## This value is automatically replaced by the version specified in your pom.xml file.
 ## Do not change this.
