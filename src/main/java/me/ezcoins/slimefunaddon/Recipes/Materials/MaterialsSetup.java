@@ -65,6 +65,9 @@ public class MaterialsSetup {
 
     private static final String RAINBOW = "&d轮番展现彩虹的颜色!";
     public static final SlimefunItemStack RAINBOW_CARPET = new SlimefunItemStack("RAINBOW_CARPET", Material.WHITE_CARPET, "&5彩虹地毯", "", RAINBOW);
+    
+    private static final String RAINBOW_S = "&d轮番展现彩虹的颜色!";
+    public static final SlimefunItemStack RAINBOW_SHULKER_BOX = new SlimefunItemStack("RAINBOW_SHULKER_BOX", Material.WHITE_SHULKER_BOX, "&5彩虹潜影盒", "", RAINBOW_S);
 
 
 
