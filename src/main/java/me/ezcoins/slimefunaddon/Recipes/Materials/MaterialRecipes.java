@@ -75,7 +75,7 @@ public class MaterialRecipes {
                 new ItemStack[]{new ItemStack(Material.PURPLE_SHULKER_BOX), new ItemStack(Material.PURPLE_SHULKER_BOX), new ItemStack(Material.PURPLE_SHULKER_BOX),
                         new ItemStack(Material.PURPLE_SHULKER_BOX), SlimefunItems.RAINBOW_RUNE, new ItemStack(Material.PURPLE_SHULKER_BOX),
                         new ItemStack(Material.PURPLE_SHULKER_BOX), new ItemStack(Material.PURPLE_SHULKER_BOX), new ItemStack(Material.PURPLE_SHULKER_BOX)},
-                new SlimefunItemStack(MaterialsSetup.RAINBOW_SHULKER_BOX, 1), new RainbowTickHandler(ColoredMaterial.SHULKER))
+                new SlimefunItemStack(MaterialsSetup.RAINBOW_SHULKER_BOX, 1), new RainbowTickHandler(ColoredMaterial.SHULKER_BOX))
                 .register(plugin);
 
 
