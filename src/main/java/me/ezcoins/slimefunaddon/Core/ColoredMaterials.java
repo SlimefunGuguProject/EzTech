@@ -13,7 +13,7 @@ import org.bukkit.Material;
 public enum ColoredMaterials {
 
 
-    SHULKER(new Material[] {
+    SHULKER_BOX(new Material[] {
             Material.WHITE_SHULKER_BOX,
             Material.ORANGE_SHULKER_BOX,
             Material.MAGENTA_SHULKER_BOX,
