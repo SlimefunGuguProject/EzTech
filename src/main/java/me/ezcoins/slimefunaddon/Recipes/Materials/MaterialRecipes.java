@@ -70,20 +70,6 @@ public class MaterialRecipes {
                         new ItemStack(Material.WHITE_CARPET), new ItemStack(Material.WHITE_CARPET), new ItemStack(Material.WHITE_CARPET)},
                 new SlimefunItemStack(MaterialsSetup.RAINBOW_CARPET, 8), new RainbowTickHandler(ColoredMaterial.CARPET))
                 .register(plugin);
-        
-        new RainbowBlock(Groups.EzMisc, MaterialsSetup.RAINBOW_SHULKER_BOX, RecipeType.ANCIENT_ALTAR,
-                new ItemStack[]{new ItemStack(Material.PURPLE_SHULKER_BOX), new ItemStack(Material.PURPLE_SHULKER_BOX), new ItemStack(Material.PURPLE_SHULKER_BOX),
-                        new ItemStack(Material.PURPLE_SHULKER_BOX), SlimefunItems.RAINBOW_RUNE, new ItemStack(Material.PURPLE_SHULKER_BOX),
-                        new ItemStack(Material.PURPLE_SHULKER_BOX), new ItemStack(Material.PURPLE_SHULKER_BOX), new ItemStack(Material.PURPLE_SHULKER_BOX)},
-                new SlimefunItemStack(MaterialsSetup.RAINBOW_SHULKER_BOX, 1), new RainbowTickHandler(ColoredMaterial.SHULKER_BOX))
-                .register(plugin);
-
-
-
-
-
-
-
 
 
     }
