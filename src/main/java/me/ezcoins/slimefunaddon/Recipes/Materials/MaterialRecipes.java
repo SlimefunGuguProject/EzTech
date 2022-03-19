@@ -33,7 +33,7 @@ public class MaterialRecipes {
                         MaterialsSetup.BISMUTH, MaterialsSetup.BISMUTH, MaterialsSetup.BISMUTH}).register(EasySlimefunAddon.plugin);
 
         new SlimefunItem(Groups.EzMaterials, MaterialsSetup.PLATINUM, RecipeType.SMELTERY,
-                new ItemStack[]{SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.HARDENED_METAL_INGOT, SlimefunItems.REINFORCED_ALLOY_INGOT})
+                new ItemStack[]{SlimefunItems.DAMASCUS_STEEL_INGOT, MaterialsSetup.BISMUTH, SlimefunItems.REINFORCED_ALLOY_INGOT})
                 .register(EasySlimefunAddon.plugin);
 
         new SlimefunItem(Groups.EzMaterials, MaterialsSetup.SOULARIUM, RecipeType.SMELTERY,
