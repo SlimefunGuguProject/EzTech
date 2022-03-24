@@ -29,7 +29,7 @@ public final class EasySlimefunAddon extends AbstractAddon implements SlimefunAd
     }
 
     public EasySlimefunAddon() {
-        super("TheRealEzCoins", "SlimeFunAddon", "master", "auto-update");
+        super("TheRealEzCoins", "SlimeFunAddon", "master", "options.auto-update");
     }
 
     private static boolean exoticGardenInstalled;
@@ -50,23 +50,15 @@ public final class EasySlimefunAddon extends AbstractAddon implements SlimefunAd
 
 
         exoticGardenInstalled = Bukkit.getServer().getPluginManager().isPluginEnabled("ExoticGarden");
-        // Read something from your config.yml
-        Config cfg = new Config(this);
 
-        if (cfg.getBoolean("options.auto-update")) {
-            // You could start an Auto-Updater for example
+        plugin = this;
 
-            plugin = this;
-
-            MachineRecipes.setup(plugin);
-            MaterialRecipes.setup(plugin);
-            GeneratorRecipes.setup(plugin);
-            MobData.setup(plugin);
-            Credits.setup(plugin);
-            Groups.setup(plugin);
-        }
-
-
+        MachineRecipes.setup(plugin);
+        MaterialRecipes.setup(plugin);
+        GeneratorRecipes.setup(plugin);
+        MobData.setup(plugin);
+        Credits.setup(plugin);
+        Groups.setup(plugin);
     }
 
 
